@@ -1262,3 +1262,74 @@ LogConfig: Set CVar [[r.Shadow.DetectVertexShaderLayerAtRuntime:1]]
 [2024.02.05-21.07.02:769][670]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
 [2024.02.05-21.07.02:927][671]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
 [2024.02.05-21.07.05:697][875]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.02.05-21.25.11:629][287]LogMaterial: Display: Material /Game/StarterContent/Props/Materials/M_TableRound.M_TableRound needed to have new flag set bUsedWithNanite !
+[2024.02.05-21.25.11:914][287]LogShaderCompilers: Display: ================================================
+[2024.02.05-21.25.11:914][287]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2024.02.05-21.25.11:914][287]LogShaderCompilers: Display: Total job queries 79, among them cache hits 4 (5.06%)
+[2024.02.05-21.25.11:914][287]LogShaderCompilers: Display: Tracking 75 distinct input hashes that result in 60 distinct outputs (80.00%)
+[2024.02.05-21.25.11:914][287]LogShaderCompilers: Display: RAM used: 1.97 MiB of 1.60 GiB budget. Usage: 0.12%
+[2024.02.05-21.25.11:914][287]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2024.02.05-21.25.11:914][287]LogShaderCompilers: Display: Shaders Compiled: 0
+[2024.02.05-21.25.11:914][287]LogShaderCompilers: Display: Jobs assigned 0, completed 0 (0%)
+[2024.02.05-21.25.11:914][287]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 0.00 s
+[2024.02.05-21.25.11:914][287]LogShaderCompilers: Display: ================================================
+[2024.02.05-21.25.12:505][298]LogMaterial: Display: Material /Game/StarterContent/Props/Materials/M_Chair.M_Chair needed to have new flag set bUsedWithNanite !
+[2024.02.05-21.25.44:227][915]LogUObjectHash: Compacting FUObjectHashTables data took   1.86ms
+[2024.02.05-21.25.44:231][915]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/VehicleTemplate/Maps/VehicleOffroadExampleMap' took 0.021
+[2024.02.05-21.25.44:233][915]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/StarterContent/Props/Materials/M_Chair] ([1] browsable assets)...
+[2024.02.05-21.25.44:294][915]OBJ SavePackage:     Rendered thumbnail for [Material /Game/StarterContent/Props/Materials/M_Chair.M_Chair]
+[2024.02.05-21.25.44:294][915]OBJ SavePackage: Finished generating thumbnails for package [/Game/StarterContent/Props/Materials/M_Chair]
+[2024.02.05-21.25.44:304][915]LogPackageLocalizationCache: Processed 47 localized package path(s) for 1 prioritized culture(s) in 0.009133 seconds
+[2024.02.05-21.25.44:312][915]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/StarterContent/Props/Materials/M_Chair_Auto1
+[2024.02.05-21.25.44:312][915]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/M_Chair_Auto116605458443D554C6F0BA69CD0EE690C.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/Autosaves/Game/StarterContent/Props/Materials/M_Chair_Auto1.uasset'
+[2024.02.05-21.25.44:314][915]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/StarterContent/Props/Materials/M_TableRound] ([1] browsable assets)...
+[2024.02.05-21.25.44:340][915]OBJ SavePackage:     Rendered thumbnail for [Material /Game/StarterContent/Props/Materials/M_TableRound.M_TableRound]
+[2024.02.05-21.25.44:340][915]OBJ SavePackage: Finished generating thumbnails for package [/Game/StarterContent/Props/Materials/M_TableRound]
+[2024.02.05-21.25.44:342][915]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/StarterContent/Props/Materials/M_TableRound_Auto1
+[2024.02.05-21.25.44:342][915]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/M_TableRound_Auto15884C31A473B4656BC645ABACD2D0CD4.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/Autosaves/Game/StarterContent/Props/Materials/M_TableRound_Auto1.uasset'
+[2024.02.05-21.25.44:344][915]LogFileHelpers: Auto-saving content packages took 0.113
+[2024.02.05-21.59.29:657][ 19]LogDerivedDataCache: C:/Users/camer/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:01.095 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 795 files in 1328 folders with total size 11 MiB.
+[2024.02.05-22.01.22:966][819]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.BP_OffroadCar_PawnTractorTest
+[2024.02.05-22.01.22:968][819]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.02.05-22.01.22:968][819]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.02.05-22.01.26:213][ 72]LogViewport: Scene viewport resized to 1525x973, mode Windowed.
+[2024.02.05-22.01.35:369][ 19]LogShaderCompilers: Display: ================================================
+[2024.02.05-22.01.35:369][ 19]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2024.02.05-22.01.35:369][ 19]LogShaderCompilers: Display: Total job queries 122, among them cache hits 4 (3.28%)
+[2024.02.05-22.01.35:369][ 19]LogShaderCompilers: Display: Tracking 118 distinct input hashes that result in 94 distinct outputs (79.66%)
+[2024.02.05-22.01.35:369][ 19]LogShaderCompilers: Display: RAM used: 3.23 MiB of 1.60 GiB budget. Usage: 0.20%
+[2024.02.05-22.01.35:369][ 19]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2024.02.05-22.01.35:369][ 19]LogShaderCompilers: Display: Shaders Compiled: 0
+[2024.02.05-22.01.35:369][ 19]LogShaderCompilers: Display: Jobs assigned 0, completed 0 (0%)
+[2024.02.05-22.01.35:369][ 19]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 0.00 s
+[2024.02.05-22.01.35:369][ 19]LogShaderCompilers: Display: ================================================
+[2024.02.05-22.01.36:355][121]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.02.05-22.03.06:545][209]LogWorld: UWorld::CleanupWorld for World_8, bSessionEnded=true, bCleanupResources=true
+[2024.02.05-22.03.06:546][209]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.02.05-22.03.37:083][566]LogContentBrowser: Deferred new asset folder creation: NewFolder
+[2024.02.05-22.03.37:122][566]LogContentBrowser: Creating deferred item: NewFolder
+[2024.02.05-22.03.37:139][567]LogContentBrowser: Renaming the item being created (Deferred Item: NewFolder).
+[2024.02.05-22.03.41:554][983]LogContentBrowser: Attempting asset rename: NewFolder -> Levels
+[2024.02.05-22.03.41:554][983]LogContentBrowser: End creating deferred item NewFolder
+[2024.02.05-22.03.50:991][717]LogContentBrowser: Deferred new asset file creation: NewWorld
+[2024.02.05-22.03.51:007][717]LogContentBrowser: Creating deferred item: NewWorld
+[2024.02.05-22.03.51:041][719]LogContentBrowser: Renaming the item being created (Deferred Item: NewWorld).
+[2024.02.05-22.03.57:945][375]LogContentBrowser: Attempting asset rename: NewWorld -> Level0
+[2024.02.05-22.03.57:946][375]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.02.05-22.03.57:946][375]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.02.05-22.03.57:951][375]LogContentBrowser: End creating deferred item NewWorld
+[2024.02.05-22.04.02:443][752]LogUObjectHash: Compacting FUObjectHashTables data took   1.24ms
+[2024.02.05-22.04.02:459][752]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.05-22.04.02:521][752]LogUObjectHash: Compacting FUObjectHashTables data took   1.05ms
+[2024.02.05-22.04.02:524][752]LogSavePackage: Moving output files for package: /Game/TeamFolder/Levels/Level0
+[2024.02.05-22.04.02:524][752]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/Level0C0FC25E741D191378DC104AAC8398601.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/TeamFolder/Levels/Level0.umap'
+[2024.02.05-22.04.02:531][752]LogFileHelpers: Saving map 'Level0' took 0.026
+[2024.02.05-22.04.02:534][752]LogSavePackage: Moving output files for package: /Game/StarterContent/Props/Materials/M_Chair
+[2024.02.05-22.04.02:534][752]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/M_Chair2A6DC4DC40BF0A48AF930A8750C2EF22.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/StarterContent/Props/Materials/M_Chair.uasset'
+[2024.02.05-22.04.02:538][752]LogSavePackage: Moving output files for package: /Game/StarterContent/Props/Materials/M_TableRound
+[2024.02.05-22.04.02:538][752]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/M_TableRoundD8C937EE412D6AF2223925B96D2646EF.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/StarterContent/Props/Materials/M_TableRound.uasset'
+[2024.02.05-22.04.02:551][752]LogFileHelpers: InternalPromptForCheckoutAndSave took 91 ms
+[2024.02.05-22.04.02:553][752]AssetCheck: New page: Asset Save: multiple assets
+[2024.02.05-22.04.02:554][752]LogContentValidation: Display: Validating /Script/Engine.World /Game/TeamFolder/Levels/Level0.Level0
+[2024.02.05-22.04.02:554][752]LogContentValidation: Display: Validating /Script/Engine.Material /Game/StarterContent/Props/Materials/M_Chair.M_Chair
+[2024.02.05-22.04.02:554][752]LogContentValidation: Display: Validating /Script/Engine.Material /Game/StarterContent/Props/Materials/M_TableRound.M_TableRound
