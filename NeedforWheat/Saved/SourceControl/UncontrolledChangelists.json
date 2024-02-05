@@ -5,11 +5,7 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleAdvExampleMap/B/ER/RVWZ1265ZRMD2XJ09OEJQV.uasset",
-				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleAdvExampleMap/8/FC/92KY8KVG99XSRLJFRJKJKB.uasset",
-				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleAdvExampleMap/D/TP/CVWW1658QS0SH53P68WHIT.uasset",
 				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleAdvExampleMap/1/ZH/1C5VN117J1HQ8BNHL18U8U.uasset",
-				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleOffroadExampleMap/9/FF/K25ACGX3AK5UB68EBZ7PRM.uasset",
 				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleOffroadExampleMap/0/5J/C0ICJ8P8TU8TANIKO91ZL4.uasset",
 				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleOffroadExampleMap/0/66/N7ELVY19D863HQ7848N7IE.uasset",
 				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleOffroadExampleMap/0/B1/K7F7F9DKUK78EXGLFK8082.uasset",
@@ -79,6 +75,16 @@
 				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/TeamFolder/Materials/TestMaterialRed.uasset",
 				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleOffroadExampleMap/4/EA/ZRZWCPDYMOCUN8XVYKJY0R.uasset",
 				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/VehicleTemplate/Blueprints/BP_VehicleAdvOffroadGameMode.uasset",
+				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/StarterContent/Maps/Advanced_Lighting.umap",
+				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/StarterContent/Maps/Advanced_Lighting_BuiltData.uasset",
+				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/StarterContent/Maps/Minimal_Default.umap",
+				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/StarterContent/Maps/Minimal_Default_BuiltData.uasset",
+				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/StarterContent/Maps/StarterMap.umap",
+				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/StarterContent/Maps/StarterMap_BuiltData.uasset",
+				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleAdvExampleMap/B/ER/RVWZ1265ZRMD2XJ09OEJQV.uasset",
+				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleAdvExampleMap/8/FC/92KY8KVG99XSRLJFRJKJKB.uasset",
+				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleAdvExampleMap/D/TP/CVWW1658QS0SH53P68WHIT.uasset",
+				"C:/Unreal Engine/Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/VehicleTemplate/Maps/VehicleOffroadExampleMap/9/FF/K25ACGX3AK5UB68EBZ7PRM.uasset",
 				"C:/Projects/TeNamNI/TeNamNI_FarmJam_2024/NeedforWheat/Content/StarterContent/Architecture/Floor_400x400.uasset"
 			]
 		}
