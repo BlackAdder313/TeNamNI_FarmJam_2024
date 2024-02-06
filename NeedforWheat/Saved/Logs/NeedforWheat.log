@@ -3640,3 +3640,362 @@ Otherwise assets can be missing from cooked builds. Continue with rename?
 [2024.02.06-22.10.19:166][859]LogContentValidation: Display: Validating /Script/Landscape.LandscapeStreamingProxy /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_1_0
 [2024.02.06-22.10.22:020][ 53]LogAssetRegistry: Warning: ScanPathsSynchronous: Package /Game/TeamFolder/Levels/VehicleOffroadExampleMap1 does not exist, will not scan.
 [2024.02.06-22.10.22:058][ 55]LogAssetRegistry: Warning: ScanPathsSynchronous: Package /Game/TeamFolder/Levels/VehicleOffroadExampleMap1 does not exist, will not scan.
+[2024.02.06-22.10.52:778][246]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2024.02.06-22.10.52:785][246]LogContentBundle: [Level0(Standalone)] Generating Streaming for 0 Content Bundles.
+[2024.02.06-22.10.52:785][246]LogWorldPartition: Display: GenerateStreaming for 'Level0' started...
+[2024.02.06-22.10.52:786][246]LogWorldPartition: Display: GenerateStreaming for 'Level0' took 1 ms (total: 7 ms)
+[2024.02.06-22.10.52:786][246]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.02.06-22.10.52:786][246]PIE: New page: PIE session: Level0 (6 Feb 2024, 22:10:52)
+[2024.02.06-22.10.52:818][246]LogPlayLevel: Creating play world package: /Game/TeamFolder/Levels/UEDPIE_0_Level0
+[2024.02.06-22.10.53:206][246]LogPlayLevel: PIE: StaticDuplicateObject took: (0.388708s)
+[2024.02.06-22.10.53:206][246]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TeamFolder/Levels/Level0.Level0 to /Game/TeamFolder/Levels/UEDPIE_0_Level0.Level0 (0.388751s)
+[2024.02.06-22.10.53:210][246]LogUObjectHash: Compacting FUObjectHashTables data took   0.47ms
+[2024.02.06-22.10.53:212][246]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.02.06-22.10.53:212][246]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.02.06-22.10.53:212][246]LogAIModule: Creating AISystem for world Level0
+[2024.02.06-22.10.53:212][246]LogWorldPartition: ULevel::OnLevelLoaded(Level0)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.02.06-22.10.53:212][246]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.02.06-22.10.53:212][246]LogWorldPartition: UWorldPartition::Initialize : World = Level0, World Type = PIE, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 0, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2024.02.06-22.10.53:213][246]LogWorldPartition: UWorldPartition::Initialize Context : World NetMode = Standalone, IsServer = 0, IsDedicatedServer = 0, IsServerStreamingEnabled = 0, IsServerStreamingOutEnabled = 0, IsUsingMakingVisibleTransaction = 0, IsUsingMakingInvisibleTransaction = 0
+[2024.02.06-22.10.53:234][246]LogContentBundle: [Level0(Standalone)] Creating new contrainer.
+[2024.02.06-22.10.53:234][246]LogWorldPartition: Display: WorldPartition initialize took 20 ms (total: 15.9 sec)
+[2024.02.06-22.10.53:234][246]LogPlayLevel: PIE: World Init took: (0.021571s)
+[2024.02.06-22.10.53:234][246]LogAudio: Display: Creating Audio Device:                 Id: 5, Scope: Unique, Realtime: True
+[2024.02.06-22.10.53:234][246]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.02.06-22.10.53:234][246]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.02.06-22.10.53:234][246]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.02.06-22.10.53:234][246]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.02.06-22.10.53:234][246]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2024.02.06-22.10.53:234][246]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.02.06-22.10.53:234][246]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2024.02.06-22.10.53:234][246]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.02.06-22.10.53:234][246]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.02.06-22.10.53:234][246]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.02.06-22.10.53:234][246]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.02.06-22.10.53:236][246]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.02.06-22.10.53:255][246]LogAudioMixer: Display: Using Audio Hardware Device VoiceMeeter Aux Input (VB-Audio VoiceMeeter AUX VAIO)
+[2024.02.06-22.10.53:255][246]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.02.06-22.10.53:255][246]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.02.06-22.10.53:255][246]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.02.06-22.10.53:256][246]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=5
+[2024.02.06-22.10.53:256][246]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=5
+[2024.02.06-22.10.53:257][246]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=5
+[2024.02.06-22.10.53:257][246]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=5
+[2024.02.06-22.10.53:257][246]LogInit: FAudioDevice initialized with ID 5.
+[2024.02.06-22.10.53:257][246]LogAudio: Display: Audio Device (ID: 5) registered with world 'Level0'.
+[2024.02.06-22.10.53:257][246]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 5
+[2024.02.06-22.10.53:261][246]LogLoad: Game class is 'BP_VehicleAdvOffroadGameMode_C'
+[2024.02.06-22.10.53:269][246]LogWorld: Bringing World /Game/TeamFolder/Levels/UEDPIE_0_Level0.Level0 up for play (max tick rate 0) at 2024.02.06-22.10.53
+[2024.02.06-22.10.53:269][246]LogWorld: Bringing up level for play took: 0.007676
+[2024.02.06-22.10.53:271][246]LogOnline: OSS: Created online subsystem instance for: :Context_8
+[2024.02.06-22.10.53:277][246]r.MotionBlur.Amount = "0"
+[2024.02.06-22.10.53:278][246]PIE: Server logged in
+[2024.02.06-22.10.53:279][246]PIE: Play in editor total start time 0.495 seconds.
+[2024.02.06-22.10.58:838][669]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.02.06-22.10.58:838][669]LogWorld: BeginTearingDown for /Game/TeamFolder/Levels/UEDPIE_0_Level0
+[2024.02.06-22.10.58:838][669]LogWorld: UWorld::CleanupWorld for Level0, bSessionEnded=true, bCleanupResources=true
+[2024.02.06-22.10.58:841][669]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.02.06-22.10.58:841][669]LogContentBundle: [Level0(Standalone)] Deleting container.
+[2024.02.06-22.10.58:845][669]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.02.06-22.10.58:848][669]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.02.06-22.10.58:852][669]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.02.06-22.10.58:853][669]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 5
+[2024.02.06-22.10.58:853][669]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=5
+[2024.02.06-22.10.58:854][669]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=5
+[2024.02.06-22.10.58:863][669]LogUObjectHash: Compacting FUObjectHashTables data took   0.82ms
+[2024.02.06-22.10.58:948][670]LogPlayLevel: Display: Destroying online subsystem :Context_8
+[2024.02.06-22.11.07:356][250]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.11.07:358][250]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.02.06-22.11.07:358][250]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.02.06-22.11.07:369][250]LogSlate: Warning: The command 'BlueprintEditorSpawnNodes.AddActorRefAction->CommandInfo' has the same default chord as 'BlueprintEditorSpawnNodes.(Class=/Script/BlueprintGraph.K2Node_Knot Key=R Shift=false Ctrl=false Alt=false)' [R]
+[2024.02.06-22.11.09:143][250]LogSlate: Took 0.004722 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
+[2024.02.06-22.11.12:313][253]LogViewport: Scene viewport resized to 1525x973, mode Windowed.
+[2024.02.06-22.12.02:106][334]BlueprintLog: New page: Compile BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.02:220][334]LogUObjectHash: Compacting FUObjectHashTables data took   1.19ms
+[2024.02.06-22.12.02:848][378]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.12.02:894][378]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.02.06-22.12.02:928][378]LogSavePackage: Moving output files for package: /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.02:929][378]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/BP_OffroadCar_PawnTractorTestD7A93F98498DF1CBAB912BA490250369.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.uasset'
+[2024.02.06-22.12.02:938][378]LogFileHelpers: InternalPromptForCheckoutAndSave took 89 ms (total: 7.39 sec)
+[2024.02.06-22.12.02:940][378]AssetCheck: New page: Asset Save: BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.02:940][378]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.05:080][552]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2024.02.06-22.12.05:087][552]LogContentBundle: [Level0(Standalone)] Generating Streaming for 0 Content Bundles.
+[2024.02.06-22.12.05:087][552]LogWorldPartition: Display: GenerateStreaming for 'Level0' started...
+[2024.02.06-22.12.05:089][552]LogWorldPartition: Display: GenerateStreaming for 'Level0' took 1 ms (total: 9 ms)
+[2024.02.06-22.12.05:089][552]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.02.06-22.12.05:089][552]PIE: New page: PIE session: Level0 (6 Feb 2024, 22:12:05)
+[2024.02.06-22.12.05:089][552]LogPlayLevel: Creating play world package: /Game/TeamFolder/Levels/UEDPIE_0_Level0
+[2024.02.06-22.12.05:479][552]LogPlayLevel: PIE: StaticDuplicateObject took: (0.389825s)
+[2024.02.06-22.12.05:479][552]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TeamFolder/Levels/Level0.Level0 to /Game/TeamFolder/Levels/UEDPIE_0_Level0.Level0 (0.389868s)
+[2024.02.06-22.12.05:492][552]LogUObjectHash: Compacting FUObjectHashTables data took   1.10ms
+[2024.02.06-22.12.05:494][552]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.02.06-22.12.05:494][552]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.02.06-22.12.05:495][552]LogAIModule: Creating AISystem for world Level0
+[2024.02.06-22.12.05:495][552]LogWorldPartition: ULevel::OnLevelLoaded(Level0)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.02.06-22.12.05:495][552]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.02.06-22.12.05:495][552]LogWorldPartition: UWorldPartition::Initialize : World = Level0, World Type = PIE, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 0, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2024.02.06-22.12.05:495][552]LogWorldPartition: UWorldPartition::Initialize Context : World NetMode = Standalone, IsServer = 0, IsDedicatedServer = 0, IsServerStreamingEnabled = 0, IsServerStreamingOutEnabled = 0, IsUsingMakingVisibleTransaction = 0, IsUsingMakingInvisibleTransaction = 0
+[2024.02.06-22.12.05:516][552]LogContentBundle: [Level0(Standalone)] Creating new contrainer.
+[2024.02.06-22.12.05:516][552]LogWorldPartition: Display: WorldPartition initialize took 20 ms (total: 15.9 sec)
+[2024.02.06-22.12.05:516][552]LogPlayLevel: PIE: World Init took: (0.021817s)
+[2024.02.06-22.12.05:516][552]LogAudio: Display: Creating Audio Device:                 Id: 6, Scope: Unique, Realtime: True
+[2024.02.06-22.12.05:516][552]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.02.06-22.12.05:516][552]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.02.06-22.12.05:516][552]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.02.06-22.12.05:516][552]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.02.06-22.12.05:516][552]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2024.02.06-22.12.05:516][552]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.02.06-22.12.05:516][552]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2024.02.06-22.12.05:516][552]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.02.06-22.12.05:517][552]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.02.06-22.12.05:517][552]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.02.06-22.12.05:517][552]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.02.06-22.12.05:519][552]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.02.06-22.12.05:540][552]LogAudioMixer: Display: Using Audio Hardware Device VoiceMeeter Aux Input (VB-Audio VoiceMeeter AUX VAIO)
+[2024.02.06-22.12.05:540][552]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.02.06-22.12.05:540][552]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.02.06-22.12.05:540][552]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.02.06-22.12.05:542][552]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=6
+[2024.02.06-22.12.05:542][552]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=6
+[2024.02.06-22.12.05:544][552]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=6
+[2024.02.06-22.12.05:544][552]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=6
+[2024.02.06-22.12.05:544][552]LogInit: FAudioDevice initialized with ID 6.
+[2024.02.06-22.12.05:544][552]LogAudio: Display: Audio Device (ID: 6) registered with world 'Level0'.
+[2024.02.06-22.12.05:544][552]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 6
+[2024.02.06-22.12.05:559][552]LogLoad: Game class is 'BP_VehicleAdvOffroadGameMode_C'
+[2024.02.06-22.12.05:567][552]LogWorld: Bringing World /Game/TeamFolder/Levels/UEDPIE_0_Level0.Level0 up for play (max tick rate 0) at 2024.02.06-22.12.05
+[2024.02.06-22.12.05:567][552]LogWorld: Bringing up level for play took: 0.007600
+[2024.02.06-22.12.05:569][552]LogOnline: OSS: Created online subsystem instance for: :Context_11
+[2024.02.06-22.12.05:575][552]r.MotionBlur.Amount = "0"
+[2024.02.06-22.12.05:577][552]PIE: Server logged in
+[2024.02.06-22.12.05:578][552]PIE: Play in editor total start time 0.49 seconds.
+[2024.02.06-22.12.11:698][ 68]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.02.06-22.12.11:698][ 68]LogWorld: BeginTearingDown for /Game/TeamFolder/Levels/UEDPIE_0_Level0
+[2024.02.06-22.12.11:699][ 68]LogWorld: UWorld::CleanupWorld for Level0, bSessionEnded=true, bCleanupResources=true
+[2024.02.06-22.12.11:701][ 68]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.02.06-22.12.11:701][ 68]LogContentBundle: [Level0(Standalone)] Deleting container.
+[2024.02.06-22.12.11:705][ 68]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.02.06-22.12.11:710][ 68]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.02.06-22.12.11:723][ 68]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2024.02.06-22.12.11:723][ 68]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 6
+[2024.02.06-22.12.11:723][ 68]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=6
+[2024.02.06-22.12.11:726][ 68]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=6
+[2024.02.06-22.12.11:730][ 68]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.02.06-22.12.11:734][ 68]LogUObjectHash: Compacting FUObjectHashTables data took   1.12ms
+[2024.02.06-22.12.11:810][ 69]LogPlayLevel: Display: Destroying online subsystem :Context_11
+[2024.02.06-22.12.19:257][798]BlueprintLog: New page: Compile BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.19:324][798]LogUObjectHash: Compacting FUObjectHashTables data took   1.10ms
+[2024.02.06-22.12.20:089][860]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.12.20:144][860]LogSavePackage: Moving output files for package: /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.20:145][860]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/BP_OffroadCar_PawnTractorTestCF5FF0EE493DC2456B23E1AB31588161.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.uasset'
+[2024.02.06-22.12.20:158][860]LogFileHelpers: InternalPromptForCheckoutAndSave took 69 ms (total: 7.46 sec)
+[2024.02.06-22.12.20:159][860]AssetCheck: New page: Asset Save: BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.20:160][860]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.20:465][891]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.12.20:518][891]LogSavePackage: Moving output files for package: /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.20:519][891]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/BP_OffroadCar_PawnTractorTest4BABE14F48B0185DE8051EB34CA029D4.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.uasset'
+[2024.02.06-22.12.20:530][891]LogFileHelpers: InternalPromptForCheckoutAndSave took 64 ms (total: 7.52 sec)
+[2024.02.06-22.12.20:532][891]AssetCheck: New page: Asset Save: BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.20:532][891]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.20:708][908]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.12.20:754][908]LogSavePackage: Moving output files for package: /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.20:755][908]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/BP_OffroadCar_PawnTractorTest98F8186D4CE16F338F0E8D9CCBF4618F.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.uasset'
+[2024.02.06-22.12.20:767][908]LogFileHelpers: InternalPromptForCheckoutAndSave took 59 ms (total: 7.58 sec)
+[2024.02.06-22.12.20:768][908]AssetCheck: New page: Asset Save: BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.20:768][908]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.48:720][605]BlueprintLog: New page: Compile BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.48:921][605]LogUObjectHash: Compacting FUObjectHashTables data took   1.14ms
+[2024.02.06-22.12.49:513][641]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.12.49:576][641]LogSavePackage: Moving output files for package: /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.49:577][641]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/BP_OffroadCar_PawnTractorTest2DB5084D443F6796901692B1D2C22D3E.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.uasset'
+[2024.02.06-22.12.49:591][641]LogFileHelpers: InternalPromptForCheckoutAndSave took 79 ms (total: 7.66 sec)
+[2024.02.06-22.12.49:593][641]AssetCheck: New page: Asset Save: BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.49:593][641]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.49:781][659]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.12.49:831][659]LogSavePackage: Moving output files for package: /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.49:831][659]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/BP_OffroadCar_PawnTractorTest32ECD0A9459FCE76723F65B3EE1BA64B.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.uasset'
+[2024.02.06-22.12.49:842][659]LogFileHelpers: InternalPromptForCheckoutAndSave took 60 ms (total: 7.72 sec)
+[2024.02.06-22.12.49:843][659]AssetCheck: New page: Asset Save: BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.49:843][659]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.49:963][669]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.12.50:012][669]LogSavePackage: Moving output files for package: /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.50:013][669]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/BP_OffroadCar_PawnTractorTestCE185B6545C711C2FF10BAA0F431C1EA.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.uasset'
+[2024.02.06-22.12.50:024][669]LogFileHelpers: InternalPromptForCheckoutAndSave took 60 ms (total: 7.78 sec)
+[2024.02.06-22.12.50:026][669]AssetCheck: New page: Asset Save: BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.50:026][669]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.12.51:140][755]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2024.02.06-22.12.51:147][755]LogContentBundle: [Level0(Standalone)] Generating Streaming for 0 Content Bundles.
+[2024.02.06-22.12.51:147][755]LogWorldPartition: Display: GenerateStreaming for 'Level0' started...
+[2024.02.06-22.12.51:148][755]LogWorldPartition: Display: GenerateStreaming for 'Level0' took 1 ms (total: 10 ms)
+[2024.02.06-22.12.51:148][755]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.02.06-22.12.51:148][755]PIE: New page: PIE session: Level0 (6 Feb 2024, 22:12:51)
+[2024.02.06-22.12.51:148][755]LogPlayLevel: Creating play world package: /Game/TeamFolder/Levels/UEDPIE_0_Level0
+[2024.02.06-22.12.51:536][755]LogPlayLevel: PIE: StaticDuplicateObject took: (0.388284s)
+[2024.02.06-22.12.51:536][755]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TeamFolder/Levels/Level0.Level0 to /Game/TeamFolder/Levels/UEDPIE_0_Level0.Level0 (0.388320s)
+[2024.02.06-22.12.51:549][755]LogUObjectHash: Compacting FUObjectHashTables data took   1.07ms
+[2024.02.06-22.12.51:552][755]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.02.06-22.12.51:553][755]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.02.06-22.12.51:553][755]LogAIModule: Creating AISystem for world Level0
+[2024.02.06-22.12.51:553][755]LogWorldPartition: ULevel::OnLevelLoaded(Level0)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.02.06-22.12.51:553][755]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.02.06-22.12.51:553][755]LogWorldPartition: UWorldPartition::Initialize : World = Level0, World Type = PIE, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 0, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2024.02.06-22.12.51:553][755]LogWorldPartition: UWorldPartition::Initialize Context : World NetMode = Standalone, IsServer = 0, IsDedicatedServer = 0, IsServerStreamingEnabled = 0, IsServerStreamingOutEnabled = 0, IsUsingMakingVisibleTransaction = 0, IsUsingMakingInvisibleTransaction = 0
+[2024.02.06-22.12.51:573][755]LogContentBundle: [Level0(Standalone)] Creating new contrainer.
+[2024.02.06-22.12.51:573][755]LogWorldPartition: Display: WorldPartition initialize took 20 ms (total: 15.9 sec)
+[2024.02.06-22.12.51:573][755]LogPlayLevel: PIE: World Init took: (0.021469s)
+[2024.02.06-22.12.51:573][755]LogAudio: Display: Creating Audio Device:                 Id: 7, Scope: Unique, Realtime: True
+[2024.02.06-22.12.51:573][755]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.02.06-22.12.51:573][755]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.02.06-22.12.51:573][755]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.02.06-22.12.51:573][755]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.02.06-22.12.51:573][755]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2024.02.06-22.12.51:573][755]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.02.06-22.12.51:573][755]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2024.02.06-22.12.51:573][755]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.02.06-22.12.51:574][755]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.02.06-22.12.51:574][755]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.02.06-22.12.51:574][755]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.02.06-22.12.51:576][755]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.02.06-22.12.51:594][755]LogAudioMixer: Display: Using Audio Hardware Device VoiceMeeter Aux Input (VB-Audio VoiceMeeter AUX VAIO)
+[2024.02.06-22.12.51:595][755]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.02.06-22.12.51:595][755]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.02.06-22.12.51:595][755]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.02.06-22.12.51:595][755]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=7
+[2024.02.06-22.12.51:596][755]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=7
+[2024.02.06-22.12.51:597][755]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=7
+[2024.02.06-22.12.51:597][755]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=7
+[2024.02.06-22.12.51:597][755]LogInit: FAudioDevice initialized with ID 7.
+[2024.02.06-22.12.51:597][755]LogAudio: Display: Audio Device (ID: 7) registered with world 'Level0'.
+[2024.02.06-22.12.51:597][755]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 7
+[2024.02.06-22.12.51:600][755]LogLoad: Game class is 'BP_VehicleAdvOffroadGameMode_C'
+[2024.02.06-22.12.51:608][755]LogWorld: Bringing World /Game/TeamFolder/Levels/UEDPIE_0_Level0.Level0 up for play (max tick rate 0) at 2024.02.06-22.12.51
+[2024.02.06-22.12.51:608][755]LogWorld: Bringing up level for play took: 0.007481
+[2024.02.06-22.12.51:610][755]LogOnline: OSS: Created online subsystem instance for: :Context_12
+[2024.02.06-22.12.51:616][755]r.MotionBlur.Amount = "0"
+[2024.02.06-22.12.51:617][755]PIE: Server logged in
+[2024.02.06-22.12.51:618][755]PIE: Play in editor total start time 0.471 seconds.
+[2024.02.06-22.13.00:078][472]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.02.06-22.13.00:078][472]LogWorld: BeginTearingDown for /Game/TeamFolder/Levels/UEDPIE_0_Level0
+[2024.02.06-22.13.00:078][472]LogWorld: UWorld::CleanupWorld for Level0, bSessionEnded=true, bCleanupResources=true
+[2024.02.06-22.13.00:081][472]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.02.06-22.13.00:081][472]LogContentBundle: [Level0(Standalone)] Deleting container.
+[2024.02.06-22.13.00:085][472]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.02.06-22.13.00:089][472]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.02.06-22.13.00:104][472]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2024.02.06-22.13.00:104][472]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 7
+[2024.02.06-22.13.00:104][472]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=7
+[2024.02.06-22.13.00:105][472]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=7
+[2024.02.06-22.13.00:109][472]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.02.06-22.13.00:114][472]LogUObjectHash: Compacting FUObjectHashTables data took   1.40ms
+[2024.02.06-22.13.00:192][473]LogPlayLevel: Display: Destroying online subsystem :Context_12
+[2024.02.06-22.13.01:368][557]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.13.01:425][557]LogUObjectHash: Compacting FUObjectHashTables data took   1.06ms
+[2024.02.06-22.13.01:441][557]LogUObjectHash: Compacting FUObjectHashTables data took   0.51ms
+[2024.02.06-22.13.01:453][557]LogUObjectHash: Compacting FUObjectHashTables data took   0.49ms
+[2024.02.06-22.13.01:468][557]LogFileHelpers: InternalPromptForCheckoutAndSave took 99 ms (total: 7.88 sec)
+[2024.02.06-22.13.01:688][573]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.13.01:739][573]LogUObjectHash: Compacting FUObjectHashTables data took   0.50ms
+[2024.02.06-22.13.01:753][573]LogUObjectHash: Compacting FUObjectHashTables data took   0.54ms
+[2024.02.06-22.13.01:765][573]LogUObjectHash: Compacting FUObjectHashTables data took   0.52ms
+[2024.02.06-22.13.01:781][573]LogFileHelpers: InternalPromptForCheckoutAndSave took 93 ms (total: 7.97 sec)
+[2024.02.06-22.13.01:997][589]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.13.02:047][589]LogUObjectHash: Compacting FUObjectHashTables data took   0.59ms
+[2024.02.06-22.13.02:060][589]LogUObjectHash: Compacting FUObjectHashTables data took   0.52ms
+[2024.02.06-22.13.02:073][589]LogUObjectHash: Compacting FUObjectHashTables data took   0.52ms
+[2024.02.06-22.13.02:091][589]LogFileHelpers: InternalPromptForCheckoutAndSave took 93 ms (total: 8.07 sec)
+[2024.02.06-22.13.14:047][740]BlueprintLog: New page: Compile BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.13.14:114][740]LogUObjectHash: Compacting FUObjectHashTables data took   1.06ms
+[2024.02.06-22.13.14:717][785]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.13.14:773][785]LogSavePackage: Moving output files for package: /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.13.14:774][785]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/BP_OffroadCar_PawnTractorTestD49C4C044BAE5985B1539DA06BB30C58.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.uasset'
+[2024.02.06-22.13.14:788][785]LogFileHelpers: InternalPromptForCheckoutAndSave took 69 ms (total: 8.14 sec)
+[2024.02.06-22.13.14:789][785]AssetCheck: New page: Asset Save: BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.13.14:789][785]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.13.14:933][798]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.13.14:987][798]LogSavePackage: Moving output files for package: /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.13.14:987][798]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/BP_OffroadCar_PawnTractorTest24D488E142A7A123671B3D9118FBCDA1.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.uasset'
+[2024.02.06-22.13.15:003][798]LogFileHelpers: InternalPromptForCheckoutAndSave took 70 ms (total: 8.21 sec)
+[2024.02.06-22.13.15:005][798]AssetCheck: New page: Asset Save: BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.13.15:006][798]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.13.15:098][805]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.13.15:140][805]LogSavePackage: Moving output files for package: /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.13.15:141][805]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/BP_OffroadCar_PawnTractorTest44FDE78B414045CBD22C4CA404562B6B.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.uasset'
+[2024.02.06-22.13.15:155][805]LogFileHelpers: InternalPromptForCheckoutAndSave took 55 ms (total: 8.26 sec)
+[2024.02.06-22.13.15:156][805]AssetCheck: New page: Asset Save: BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.13.15:156][805]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VehicleTemplate/Blueprints/OffroadCar/BP_OffroadCar_PawnTractorTest.BP_OffroadCar_PawnTractorTest
+[2024.02.06-22.13.17:449][ 11]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2024.02.06-22.13.17:455][ 11]LogContentBundle: [Level0(Standalone)] Generating Streaming for 0 Content Bundles.
+[2024.02.06-22.13.17:456][ 11]LogWorldPartition: Display: GenerateStreaming for 'Level0' started...
+[2024.02.06-22.13.17:456][ 11]LogWorldPartition: Display: GenerateStreaming for 'Level0' took 1 ms (total: 12 ms)
+[2024.02.06-22.13.17:458][ 11]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.02.06-22.13.17:458][ 11]PIE: New page: PIE session: Level0 (6 Feb 2024, 22:13:17)
+[2024.02.06-22.13.17:488][ 11]LogPlayLevel: Creating play world package: /Game/TeamFolder/Levels/UEDPIE_0_Level0
+[2024.02.06-22.13.17:879][ 11]LogPlayLevel: PIE: StaticDuplicateObject took: (0.390898s)
+[2024.02.06-22.13.17:879][ 11]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TeamFolder/Levels/Level0.Level0 to /Game/TeamFolder/Levels/UEDPIE_0_Level0.Level0 (0.390940s)
+[2024.02.06-22.13.17:893][ 11]LogUObjectHash: Compacting FUObjectHashTables data took   1.63ms
+[2024.02.06-22.13.17:895][ 11]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.02.06-22.13.17:895][ 11]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.02.06-22.13.17:895][ 11]LogAIModule: Creating AISystem for world Level0
+[2024.02.06-22.13.17:896][ 11]LogWorldPartition: ULevel::OnLevelLoaded(Level0)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.02.06-22.13.17:896][ 11]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.02.06-22.13.17:896][ 11]LogWorldPartition: UWorldPartition::Initialize : World = Level0, World Type = PIE, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 0, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2024.02.06-22.13.17:896][ 11]LogWorldPartition: UWorldPartition::Initialize Context : World NetMode = Standalone, IsServer = 0, IsDedicatedServer = 0, IsServerStreamingEnabled = 0, IsServerStreamingOutEnabled = 0, IsUsingMakingVisibleTransaction = 0, IsUsingMakingInvisibleTransaction = 0
+[2024.02.06-22.13.17:917][ 11]LogContentBundle: [Level0(Standalone)] Creating new contrainer.
+[2024.02.06-22.13.17:917][ 11]LogWorldPartition: Display: WorldPartition initialize took 20 ms (total: 15.9 sec)
+[2024.02.06-22.13.17:917][ 11]LogPlayLevel: PIE: World Init took: (0.021502s)
+[2024.02.06-22.13.17:917][ 11]LogAudio: Display: Creating Audio Device:                 Id: 8, Scope: Unique, Realtime: True
+[2024.02.06-22.13.17:917][ 11]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.02.06-22.13.17:917][ 11]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.02.06-22.13.17:917][ 11]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.02.06-22.13.17:917][ 11]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.02.06-22.13.17:917][ 11]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2024.02.06-22.13.17:917][ 11]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.02.06-22.13.17:917][ 11]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2024.02.06-22.13.17:917][ 11]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.02.06-22.13.17:917][ 11]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.02.06-22.13.17:917][ 11]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.02.06-22.13.17:917][ 11]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.02.06-22.13.17:919][ 11]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.02.06-22.13.17:938][ 11]LogAudioMixer: Display: Using Audio Hardware Device VoiceMeeter Aux Input (VB-Audio VoiceMeeter AUX VAIO)
+[2024.02.06-22.13.17:938][ 11]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.02.06-22.13.17:938][ 11]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.02.06-22.13.17:938][ 11]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.02.06-22.13.17:938][ 11]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=8
+[2024.02.06-22.13.17:938][ 11]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=8
+[2024.02.06-22.13.17:940][ 11]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=8
+[2024.02.06-22.13.17:940][ 11]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=8
+[2024.02.06-22.13.17:940][ 11]LogInit: FAudioDevice initialized with ID 8.
+[2024.02.06-22.13.17:940][ 11]LogAudio: Display: Audio Device (ID: 8) registered with world 'Level0'.
+[2024.02.06-22.13.17:940][ 11]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 8
+[2024.02.06-22.13.17:944][ 11]LogLoad: Game class is 'BP_VehicleAdvOffroadGameMode_C'
+[2024.02.06-22.13.17:952][ 11]LogWorld: Bringing World /Game/TeamFolder/Levels/UEDPIE_0_Level0.Level0 up for play (max tick rate 0) at 2024.02.06-22.13.17
+[2024.02.06-22.13.17:952][ 11]LogWorld: Bringing up level for play took: 0.007883
+[2024.02.06-22.13.17:954][ 11]LogOnline: OSS: Created online subsystem instance for: :Context_13
+[2024.02.06-22.13.17:960][ 11]r.MotionBlur.Amount = "0"
+[2024.02.06-22.13.17:961][ 11]PIE: Server logged in
+[2024.02.06-22.13.17:962][ 11]PIE: Play in editor total start time 0.506 seconds.
+[2024.02.06-22.13.28:018][903]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.02.06-22.13.28:018][903]LogWorld: BeginTearingDown for /Game/TeamFolder/Levels/UEDPIE_0_Level0
+[2024.02.06-22.13.28:018][903]LogWorld: UWorld::CleanupWorld for Level0, bSessionEnded=true, bCleanupResources=true
+[2024.02.06-22.13.28:021][903]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.02.06-22.13.28:021][903]LogContentBundle: [Level0(Standalone)] Deleting container.
+[2024.02.06-22.13.28:024][903]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.02.06-22.13.28:029][903]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.02.06-22.13.28:042][903]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2024.02.06-22.13.28:043][903]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 8
+[2024.02.06-22.13.28:043][903]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=8
+[2024.02.06-22.13.28:045][903]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=8
+[2024.02.06-22.13.28:049][903]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.02.06-22.13.28:054][903]LogUObjectHash: Compacting FUObjectHashTables data took   1.20ms
+[2024.02.06-22.13.28:131][904]LogPlayLevel: Display: Destroying online subsystem :Context_13
+[2024.02.06-22.13.29:738][ 23]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.13.29:789][ 23]LogUObjectHash: Compacting FUObjectHashTables data took   1.11ms
+[2024.02.06-22.13.29:803][ 23]LogUObjectHash: Compacting FUObjectHashTables data took   0.49ms
+[2024.02.06-22.13.29:817][ 23]LogUObjectHash: Compacting FUObjectHashTables data took   0.55ms
+[2024.02.06-22.13.29:830][ 23]LogFileHelpers: InternalPromptForCheckoutAndSave took 91 ms (total: 8.35 sec)
+[2024.02.06-22.13.30:070][ 40]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.13.30:123][ 40]LogUObjectHash: Compacting FUObjectHashTables data took   0.56ms
+[2024.02.06-22.13.30:136][ 40]LogUObjectHash: Compacting FUObjectHashTables data took   0.50ms
+[2024.02.06-22.13.30:148][ 40]LogUObjectHash: Compacting FUObjectHashTables data took   0.49ms
+[2024.02.06-22.13.30:167][ 40]LogFileHelpers: InternalPromptForCheckoutAndSave took 97 ms (total: 8.45 sec)
