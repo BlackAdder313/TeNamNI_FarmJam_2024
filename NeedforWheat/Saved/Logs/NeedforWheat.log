@@ -3999,3 +3999,148 @@ Otherwise assets can be missing from cooked builds. Continue with rename?
 [2024.02.06-22.13.30:136][ 40]LogUObjectHash: Compacting FUObjectHashTables data took   0.50ms
 [2024.02.06-22.13.30:148][ 40]LogUObjectHash: Compacting FUObjectHashTables data took   0.49ms
 [2024.02.06-22.13.30:167][ 40]LogFileHelpers: InternalPromptForCheckoutAndSave took 97 ms (total: 8.45 sec)
+[2024.02.06-22.14.14:753][401]LogEditorViewport: Clicking Background
+[2024.02.06-22.14.36:776][ 64]Cmd: TRANSACTION UNDO
+[2024.02.06-22.14.36:776][ 64]LogEditorTransaction: Undo Landscape Editing: Sculpt
+[2024.02.06-22.14.36:780][ 64]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_1_0.Heightmap_7 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.14.36:781][ 64]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_1_0.Heightmap_1 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.14.36:781][ 64]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_0_0.Heightmap_10 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.14.36:782][ 64]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_0_0.Heightmap_4 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.14.37:998][140]Cmd: TRANSACTION UNDO
+[2024.02.06-22.14.37:999][140]LogEditorTransaction: Undo Landscape Editing: Sculpt
+[2024.02.06-22.15.05:414][380]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_0_0.Heightmap_6 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.05:415][380]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_0_0.Heightmap_0 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.05:416][380]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_0_0.Heightmap_0 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.05:418][380]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_0_0.Heightmap_6 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.05:420][380]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_0_0.Heightmap_9 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.05:422][380]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_0_0.Heightmap_9 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.05:424][380]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_0_0.Heightmap_3 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.05:426][380]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_1_0.Heightmap_6 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.05:428][380]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_1_0.Heightmap_6 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.05:430][380]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_1_0.Heightmap_0 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.05:431][380]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_1_0.Heightmap_9 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.06:284][434]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_1_0.Heightmap_9 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.06:285][434]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_1_0.Heightmap_3 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:651][886]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.15.11:698][886]LogUObjectHash: Compacting FUObjectHashTables data took   1.08ms
+[2024.02.06-22.15.11:714][886]LogUObjectHash: Compacting FUObjectHashTables data took   0.63ms
+[2024.02.06-22.15.11:726][886]LogUObjectHash: Compacting FUObjectHashTables data took   0.51ms
+[2024.02.06-22.15.11:729][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_0_0.Heightmap_1 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:730][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_0_0.Heightmap_10 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:731][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_0_0.Heightmap_4 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:733][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_0_0.Heightmap_7 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:742][886]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TeamFolder/Levels/Level0/1/PR/JOH2YWK7AJWQT6ZVCRU85I
+[2024.02.06-22.15.11:742][886]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/JOH2YWK7AJWQT6ZVCRU85IEC396C50444287BC2A799C94EEBDB263.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/TeamFolder/Levels/Level0/1/PR/JOH2YWK7AJWQT6ZVCRU85I.uasset'
+[2024.02.06-22.15.11:745][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_0_0.Heightmap_0 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:746][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_0_0.Heightmap_1 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:748][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_0_0.Heightmap_10 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:749][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_0_0.Heightmap_3 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:750][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_0_0.Heightmap_4 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:751][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_0_0.Heightmap_6 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:754][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_0_0.Heightmap_7 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:755][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_0_0.Heightmap_9 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:764][886]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TeamFolder/Levels/Level0/5/ZR/JTJTJJHDKW3PDJ1UJ8LFAM
+[2024.02.06-22.15.11:765][886]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/JTJTJJHDKW3PDJ1UJ8LFAMFB40DA764B7A5A0720CF808070D68C24.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/TeamFolder/Levels/Level0/5/ZR/JTJTJJHDKW3PDJ1UJ8LFAM.uasset'
+[2024.02.06-22.15.11:767][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_1_0.Heightmap_1 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:769][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_1_0.Heightmap_10 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:770][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_1_0.Heightmap_4 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:772][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_1_0.Heightmap_7 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:782][886]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TeamFolder/Levels/Level0/8/W1/6I6YQ3M0WZH9R7JIX8R1Y0
+[2024.02.06-22.15.11:782][886]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/6I6YQ3M0WZH9R7JIX8R1Y06D2D888A45D58B7024E0128FB7D125BC.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/TeamFolder/Levels/Level0/8/W1/6I6YQ3M0WZH9R7JIX8R1Y0.uasset'
+[2024.02.06-22.15.11:785][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_1_0.Heightmap_0 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:787][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_1_0.Heightmap_1 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:788][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_1_0.Heightmap_10 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:789][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_1_0.Heightmap_4 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:790][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_1_0.Heightmap_6 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:792][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_1_0.Heightmap_7 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.182285 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:792][886]LogTexture: Display: Building textures: /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_1_0.Heightmap_9 (BGRA8, 64x64 x1x1x1) (Required Memory Estimate: 0.187492 MB), EncodeSpeed: Fast
+[2024.02.06-22.15.11:802][886]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TeamFolder/Levels/Level0/B/LO/3LYO4POENOBTQZH58R8N5Z
+[2024.02.06-22.15.11:802][886]LogSavePackage: Moving '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Saved/3LYO4POENOBTQZH58R8N5Z95A1F12C417F9C9D4A8FC2BF806546D8.tmp' to '../../../../Unreal 5 Projects/TeNamNI_FarmJam_2024/NeedforWheat/Content/__ExternalActors__/TeamFolder/Levels/Level0/B/LO/3LYO4POENOBTQZH58R8N5Z.uasset'
+[2024.02.06-22.15.11:814][886]LogFileHelpers: InternalPromptForCheckoutAndSave took 162 ms (total: 8.61 sec)
+[2024.02.06-22.15.11:819][886]AssetCheck: New page: Asset Save: multiple assets
+[2024.02.06-22.15.11:819][886]LogContentValidation: Display: Validating /Script/Landscape.LandscapeStreamingProxy /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_0_0
+[2024.02.06-22.15.11:819][886]LogContentValidation: Display: Validating /Script/Landscape.LandscapeStreamingProxy /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_0_0
+[2024.02.06-22.15.11:819][886]LogContentValidation: Display: Validating /Script/Landscape.LandscapeStreamingProxy /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_0_1_0
+[2024.02.06-22.15.11:819][886]LogContentValidation: Display: Validating /Script/Landscape.LandscapeStreamingProxy /Game/TeamFolder/Levels/Level0.Level0:PersistentLevel.LandscapeStreamingProxy_BN55SI9ETKGRY904720BQHPG3_1_1_1_0
+[2024.02.06-22.15.12:897][982]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2024.02.06-22.15.12:903][982]LogContentBundle: [Level0(Standalone)] Generating Streaming for 0 Content Bundles.
+[2024.02.06-22.15.12:904][982]LogWorldPartition: Display: GenerateStreaming for 'Level0' started...
+[2024.02.06-22.15.12:905][982]LogWorldPartition: Display: GenerateStreaming for 'Level0' took 1 ms (total: 13 ms)
+[2024.02.06-22.15.12:905][982]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.02.06-22.15.12:905][982]PIE: New page: PIE session: Level0 (6 Feb 2024, 22:15:12)
+[2024.02.06-22.15.12:905][982]LogPlayLevel: Creating play world package: /Game/TeamFolder/Levels/UEDPIE_0_Level0
+[2024.02.06-22.15.13:298][982]LogPlayLevel: PIE: StaticDuplicateObject took: (0.392830s)
+[2024.02.06-22.15.13:298][982]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TeamFolder/Levels/Level0.Level0 to /Game/TeamFolder/Levels/UEDPIE_0_Level0.Level0 (0.392867s)
+[2024.02.06-22.15.13:311][982]LogUObjectHash: Compacting FUObjectHashTables data took   1.22ms
+[2024.02.06-22.15.13:311][982]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.02.06-22.15.13:312][982]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.02.06-22.15.13:312][982]LogAIModule: Creating AISystem for world Level0
+[2024.02.06-22.15.13:312][982]LogWorldPartition: ULevel::OnLevelLoaded(Level0)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.02.06-22.15.13:312][982]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.02.06-22.15.13:312][982]LogWorldPartition: UWorldPartition::Initialize : World = Level0, World Type = PIE, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 0, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2024.02.06-22.15.13:312][982]LogWorldPartition: UWorldPartition::Initialize Context : World NetMode = Standalone, IsServer = 0, IsDedicatedServer = 0, IsServerStreamingEnabled = 0, IsServerStreamingOutEnabled = 0, IsUsingMakingVisibleTransaction = 0, IsUsingMakingInvisibleTransaction = 0
+[2024.02.06-22.15.13:333][982]LogContentBundle: [Level0(Standalone)] Creating new contrainer.
+[2024.02.06-22.15.13:333][982]LogWorldPartition: Display: WorldPartition initialize took 20 ms (total: 16.0 sec)
+[2024.02.06-22.15.13:333][982]LogPlayLevel: PIE: World Init took: (0.021465s)
+[2024.02.06-22.15.13:333][982]LogAudio: Display: Creating Audio Device:                 Id: 9, Scope: Unique, Realtime: True
+[2024.02.06-22.15.13:333][982]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.02.06-22.15.13:333][982]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.02.06-22.15.13:333][982]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.02.06-22.15.13:333][982]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.02.06-22.15.13:333][982]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2024.02.06-22.15.13:333][982]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.02.06-22.15.13:333][982]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2024.02.06-22.15.13:333][982]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.02.06-22.15.13:334][982]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.02.06-22.15.13:334][982]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.02.06-22.15.13:334][982]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.02.06-22.15.13:335][982]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.02.06-22.15.13:354][982]LogAudioMixer: Display: Using Audio Hardware Device VoiceMeeter Aux Input (VB-Audio VoiceMeeter AUX VAIO)
+[2024.02.06-22.15.13:354][982]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.02.06-22.15.13:355][982]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.02.06-22.15.13:355][982]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.02.06-22.15.13:355][982]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=9
+[2024.02.06-22.15.13:355][982]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=9
+[2024.02.06-22.15.13:357][982]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=9
+[2024.02.06-22.15.13:357][982]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=9
+[2024.02.06-22.15.13:357][982]LogInit: FAudioDevice initialized with ID 9.
+[2024.02.06-22.15.13:357][982]LogAudio: Display: Audio Device (ID: 9) registered with world 'Level0'.
+[2024.02.06-22.15.13:357][982]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 9
+[2024.02.06-22.15.13:361][982]LogLoad: Game class is 'BP_VehicleAdvOffroadGameMode_C'
+[2024.02.06-22.15.13:369][982]LogWorld: Bringing World /Game/TeamFolder/Levels/UEDPIE_0_Level0.Level0 up for play (max tick rate 0) at 2024.02.06-22.15.13
+[2024.02.06-22.15.13:369][982]LogWorld: Bringing up level for play took: 0.008000
+[2024.02.06-22.15.13:371][982]LogOnline: OSS: Created online subsystem instance for: :Context_14
+[2024.02.06-22.15.13:378][982]r.MotionBlur.Amount = "0"
+[2024.02.06-22.15.13:379][982]PIE: Server logged in
+[2024.02.06-22.15.13:380][982]PIE: Play in editor total start time 0.476 seconds.
+[2024.02.06-22.15.33:638][671]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.02.06-22.15.33:638][671]LogWorld: BeginTearingDown for /Game/TeamFolder/Levels/UEDPIE_0_Level0
+[2024.02.06-22.15.33:638][671]LogWorld: UWorld::CleanupWorld for Level0, bSessionEnded=true, bCleanupResources=true
+[2024.02.06-22.15.33:641][671]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.02.06-22.15.33:642][671]LogContentBundle: [Level0(Standalone)] Deleting container.
+[2024.02.06-22.15.33:645][671]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.02.06-22.15.33:649][671]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.02.06-22.15.33:663][671]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.02.06-22.15.33:664][671]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 9
+[2024.02.06-22.15.33:664][671]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=9
+[2024.02.06-22.15.33:665][671]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=9
+[2024.02.06-22.15.33:676][671]LogUObjectHash: Compacting FUObjectHashTables data took   2.02ms
+[2024.02.06-22.15.33:794][672]LogPlayLevel: Display: Destroying online subsystem :Context_14
+[2024.02.06-22.15.38:284][ 14]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.15.38:333][ 14]LogUObjectHash: Compacting FUObjectHashTables data took   1.64ms
+[2024.02.06-22.15.38:348][ 14]LogUObjectHash: Compacting FUObjectHashTables data took   0.51ms
+[2024.02.06-22.15.38:361][ 14]LogUObjectHash: Compacting FUObjectHashTables data took   0.56ms
+[2024.02.06-22.15.38:372][ 14]LogFileHelpers: InternalPromptForCheckoutAndSave took 88 ms (total: 8.70 sec)
+[2024.02.06-22.15.38:559][ 26]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.15.38:610][ 26]LogUObjectHash: Compacting FUObjectHashTables data took   0.87ms
+[2024.02.06-22.15.38:625][ 26]LogUObjectHash: Compacting FUObjectHashTables data took   0.58ms
+[2024.02.06-22.15.38:638][ 26]LogUObjectHash: Compacting FUObjectHashTables data took   0.51ms
+[2024.02.06-22.15.38:650][ 26]LogFileHelpers: InternalPromptForCheckoutAndSave took 90 ms (total: 8.79 sec)
+[2024.02.06-22.17.57:130][874]LogViewport: Scene viewport resized to 1063x784, mode Windowed.
+[2024.02.06-22.17.59:418][ 67]LogViewport: Scene viewport resized to 1135x784, mode Windowed.
+[2024.02.06-22.18.12:844][408]LogActorComponent: UnregisterComponent: (/Engine/Transient.SphereBrushComponent) Not registered. Aborting.
+[2024.02.06-22.18.14:194][535]LogViewport: Scene viewport resized to 1541x784, mode Windowed.
+[2024.02.06-22.18.15:217][614]LogViewport: Scene viewport resized to 1135x784, mode Windowed.
+[2024.02.06-22.18.18:131][900]LogViewport: Scene viewport resized to 1541x784, mode Windowed.
+[2024.02.06-22.18.40:251][879]LogEditorViewport: Clicking Background
+[2024.02.06-22.18.43:338][147]LogUObjectHash: Compacting FUObjectHashTables data took   1.29ms
