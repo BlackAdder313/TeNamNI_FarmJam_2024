@@ -4144,3 +4144,9 @@ Otherwise assets can be missing from cooked builds. Continue with rename?
 [2024.02.06-22.18.18:131][900]LogViewport: Scene viewport resized to 1541x784, mode Windowed.
 [2024.02.06-22.18.40:251][879]LogEditorViewport: Clicking Background
 [2024.02.06-22.18.43:338][147]LogUObjectHash: Compacting FUObjectHashTables data took   1.29ms
+[2024.02.06-22.20.21:008][203]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.02.06-22.20.21:067][203]LogUObjectHash: Compacting FUObjectHashTables data took   1.06ms
+[2024.02.06-22.20.21:081][203]LogUObjectHash: Compacting FUObjectHashTables data took   0.51ms
+[2024.02.06-22.20.21:094][203]LogUObjectHash: Compacting FUObjectHashTables data took   0.50ms
+[2024.02.06-22.20.21:107][203]LogFileHelpers: InternalPromptForCheckoutAndSave took 98 ms (total: 8.89 sec)
+[2024.02.06-22.20.22:269][299]LogUObjectHash: Compacting FUObjectHashTables data took   0.54ms
