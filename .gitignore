@@ -6,3 +6,15 @@ NeedforWheat/.vs/
 NeedforWheat/Saved/Logs/
 
 NeedforWheat/Saved/Config/CrashReportClient/
+
+NeedforWheat/Saved/Config/
+
+NeedforWheat/Saved/SourceControl/
+
+*.exe
+
+*.exp
+
+*.lib
+
+*.pdb
