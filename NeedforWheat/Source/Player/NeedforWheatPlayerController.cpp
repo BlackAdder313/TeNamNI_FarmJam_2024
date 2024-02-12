@@ -2,10 +2,13 @@
 
 
 #include "NeedforWheatPlayerController.h"
-#include "NeedforWheatPawn.h"
-#include "UI\NeedforWheatUI.h"
+
 #include "EnhancedInputSubsystems.h"
 #include "ChaosWheeledVehicleMovementComponent.h"
+
+#include "NeedforWheatPawn.h"
+#include "FarmingArea\NFWFarmingAreaTrigger.h"
+#include "UI\NeedforWheatUI.h"
 
 void ANeedforWheatPlayerController::BeginPlay()
 {
@@ -34,6 +37,10 @@ void ANeedforWheatPlayerController::Tick(float Delta)
 	{
 		VehicleUI->UpdateSpeed(VehiclePawn->GetChaosVehicleMovement()->GetForwardSpeed());
 		VehicleUI->UpdateGear(VehiclePawn->GetChaosVehicleMovement()->GetCurrentGear());
+		if (m_farmingArea.IsValid())
+		{
+			m_positionsInFarmingArea.Add(GetPawn()->GetTransform().GetLocation());
+		}
 	}
 }
 
@@ -43,4 +50,23 @@ void ANeedforWheatPlayerController::OnPossess(APawn* InPawn)
 
 	// get a pointer to the controlled pawn
 	VehiclePawn = CastChecked<ANeedforWheatPawn>(InPawn);
+}
+
+
+void ANeedforWheatPlayerController::RegisterFarmingArea(ANFWFarmingAreaTrigger* farmingArea)
+{
+	if (!m_farmingArea.IsValid())
+	{
+		m_farmingArea = farmingArea;
+	}
+}
+
+void ANeedforWheatPlayerController::UnregisterFarmingArea(ANFWFarmingAreaTrigger* farmingArea)
+{
+	if (m_farmingArea.IsValid() && m_farmingArea.Get() == farmingArea)
+	{
+		m_farmingArea->UpdateVehiclePositions(m_positionsInFarmingArea);
+		m_positionsInFarmingArea.Empty();
+		m_farmingArea.Reset();
+	}
 }
