@@ -32,20 +32,38 @@ protected:
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	TSubclassOf<AActor> WheatActor;
 
-private:
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	float WheatSpacing = 65.f;
 
-	void UpdateWheatPositionsToSprout(const FVector& position, const TArray<FVector>& sproutPositions);
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	bool Debug_SpawnWheatOnBeginPlay = false;
+
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	bool Debug_SpawnWheatOnExitFromFarmingArea = false;
+
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	int WheatSproutRadius = 3;
+
+private:
+	bool TryInsertWheatPositionsAroundIndex(uint16_t index, float heightOffset, float widthOffset);
+
+	void UpdateWheatPositionsToSprout(const FVector& position, const TArray<FVector>& sproutPositions, const uint16_t verticalIndex);
+	void TrySpreadWheatToSprout(uint16_t verticalIndex, uint16_t horizontalIndex, uint16_t horizontalOffset);
+
+	void SpawnWheat(AActor* otherActor = nullptr) const;
 
 	FVector m_origin;
 	FVector m_areaBounds;
 
-	int m_verticalWheatAmount = 0;
-	int m_horizontalWheatAmount = 0;
+	int m_verticalWheatHalfAmount = 0;
+	int m_horizontalWheatHalfAmount = 0;
 
 	TArray<FVector> m_wheatPositions_topLeft;
 	TArray<FVector> m_wheatPositions_topRight;
 	TArray<FVector> m_wheatPositions_bottomLeft;
 	TArray<FVector> m_wheatPositions_bottomRight;
+
+	TArray<TArray<FVector>> m_wheatPositions;
 
 	TArray<FVector> m_wheatPositionsToSprout;
 };

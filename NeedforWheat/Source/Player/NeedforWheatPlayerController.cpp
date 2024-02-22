@@ -39,7 +39,7 @@ void ANeedforWheatPlayerController::Tick(float Delta)
 		VehicleUI->UpdateGear(VehiclePawn->GetChaosVehicleMovement()->GetCurrentGear());
 		if (m_farmingArea.IsValid())
 		{
-			m_positionsInFarmingArea.Add(GetPawn()->GetTransform().GetLocation());
+			m_positionsInFarmingArea.Add(GetPawn()->GetActorLocation());
 		}
 	}
 }

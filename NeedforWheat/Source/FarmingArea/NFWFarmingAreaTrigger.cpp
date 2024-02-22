@@ -3,18 +3,19 @@
 
 #include "NFWFarmingAreaTrigger.h"
 
+#include "Kismet/KismetMathLibrary.h"
+
 #include "Player\NeedforWheatPawn.h"
 #include "Player\NeedforWheatPlayerController.h"
 
-// Could be fetched by the BP, but for now it's hardcoded
-static const float s_wheatAreaSideLength = 45.f;
-
 namespace Internal
 {
-	bool IsPointWithinArea(const FVector& point, const FVector& areaCenter, float areaWidth, float areaHeight)
+	const int wheatPositionSortingRadius = 10;
+
+	bool IsPointWithinArea(const FVector& point, const FVector& areaCenter, float areaHeight, float areaWidth, float offset = 0.f)
 	{
-		return FMath::IsWithin(point.X, areaCenter.X - areaWidth * 0.5, areaCenter.X + areaWidth * 0.5)
-			&& FMath::IsWithin(point.Y, areaCenter.Y - areaHeight * 0.5, areaCenter.Y + areaHeight * 0.5);
+		return FMath::IsWithin(point.X, areaCenter.X - areaHeight - offset, areaCenter.X + areaHeight + offset)
+			&& FMath::IsWithin(point.Y, areaCenter.Y - areaWidth - offset, areaCenter.Y + areaWidth + offset);
 	}
 }
 
@@ -31,7 +32,7 @@ void ANFWFarmingAreaTrigger::OnPlayerEnterTriggerArea(AActor* OverlappedActor, A
 	if (const ANeedforWheatPawn* pawnActor = Cast<ANeedforWheatPawn>(OtherActor))
 	{
 		pawnActor->GetController<ANeedforWheatPlayerController>()->RegisterFarmingArea(this);
-		UE_LOG(LogTemp, Warning, TEXT("Entered"));
+		UE_LOG(LogTemp, Warning, TEXT("Enter Farming Area"));
 	}
 }
 
@@ -40,12 +41,13 @@ void ANFWFarmingAreaTrigger::OnPlayerExitTriggerArea(AActor* OverlappedActor, AA
 	if (const ANeedforWheatPawn* pawnActor = Cast<ANeedforWheatPawn>(OtherActor))
 	{
 		pawnActor->GetController<ANeedforWheatPlayerController>()->UnregisterFarmingArea(this);
-		for (const auto& position : m_wheatPositionsToSprout)
+		
+		if (Debug_SpawnWheatOnExitFromFarmingArea)
 		{
-			GetWorld()->SpawnActor<AActor>(WheatActor, position, FRotator());
+			SpawnWheat();
 		}
 		
-		UE_LOG(LogTemp, Warning, TEXT("Left"));
+		UE_LOG(LogTemp, Warning, TEXT("Exit Farming Area"));
 	}
 }
 
@@ -55,94 +57,186 @@ void ANFWFarmingAreaTrigger::BeginPlay()
 
 	GetActorBounds(true, m_origin, m_areaBounds);
 
-	float width = m_areaBounds.Y;
-	float height = m_areaBounds.X;
+	float halfHeight = m_areaBounds.X;
+	float halfWidth = m_areaBounds.Y;
 
-	m_verticalWheatAmount = height / s_wheatAreaSideLength;
-	m_horizontalWheatAmount = width / s_wheatAreaSideLength;
+	m_verticalWheatHalfAmount = halfHeight / WheatSpacing;
+	m_horizontalWheatHalfAmount = halfWidth / WheatSpacing;
 
-	int maxWheatAmount = static_cast<int>(height / s_wheatAreaSideLength) * static_cast<int>(width / s_wheatAreaSideLength);
-	UE_LOG(LogTemp, Warning, TEXT("Max Wheat Amount: %d"), maxWheatAmount);
+	m_wheatPositions.Init(TArray<FVector>(), m_verticalWheatHalfAmount * 2);
 
-	for (uint16_t widthIndex = 0, w_len = m_horizontalWheatAmount * .5; widthIndex < w_len; widthIndex++)
+	for (uint16_t heightIndex = 0, h_len = m_verticalWheatHalfAmount; heightIndex <= h_len; heightIndex++)
 	{
-		for (uint16_t heightIndex = 0, h_len = m_verticalWheatAmount * .5; heightIndex < h_len; heightIndex++)
+		uint16_t bottomIndex = m_verticalWheatHalfAmount + heightIndex;
+		uint16_t topIndex = m_verticalWheatHalfAmount - heightIndex;
+
+		for (uint16_t widthIndex = 0, w_len = m_horizontalWheatHalfAmount; widthIndex <= w_len; widthIndex++)
 		{
-			FVector bottomLeftPoint = m_origin - FVector(widthIndex * s_wheatAreaSideLength, heightIndex * s_wheatAreaSideLength, 0.f);
-			FVector bottomRightPoint = m_origin + FVector(widthIndex * s_wheatAreaSideLength, -heightIndex * s_wheatAreaSideLength, 0.f);
-			
-			FVector topLeftPoint = m_origin - FVector(widthIndex * s_wheatAreaSideLength, -heightIndex * s_wheatAreaSideLength, 0.f);
-			FVector topRightPoint = m_origin + FVector(widthIndex * s_wheatAreaSideLength, heightIndex * s_wheatAreaSideLength, 0.f);
-			
-			m_wheatPositions_bottomLeft.Add(bottomLeftPoint);
-			m_wheatPositions_bottomRight.Add(bottomRightPoint);
-			
-			m_wheatPositions_topLeft.Add(topLeftPoint);
-			m_wheatPositions_topRight.Add(topRightPoint);
+			bool successInsertOnTopLine = TryInsertWheatPositionsAroundIndex(topIndex, -heightIndex, widthIndex);
+			bool successInsertOnBottomLine = TryInsertWheatPositionsAroundIndex(bottomIndex, heightIndex, widthIndex);
 
-			m_wheatPositionsToSprout.Add(bottomLeftPoint);
-			m_wheatPositionsToSprout.Add(bottomRightPoint);
-
-			m_wheatPositionsToSprout.Add(topLeftPoint);
-			m_wheatPositionsToSprout.Add(topRightPoint);
+			if(!successInsertOnTopLine && !successInsertOnBottomLine)
+			{
+				break;
+			}
 		}
 	}
 
-	for (const auto& position : m_wheatPositionsToSprout)
+	for (auto& positionsList : m_wheatPositions)
 	{
-		GetWorld()->SpawnActor<AActor>(WheatActor, position, FRotator());
+		positionsList.Sort([](const FVector& left, const FVector& right) { return left.Y < right.Y; });
+	}
+
+	if (Debug_SpawnWheatOnBeginPlay)
+	{
+		SpawnWheat();
 	}
 }
 
 void ANFWFarmingAreaTrigger::UpdateVehiclePositions(const TArray<FVector>& vehiclePositions)
 {
-	float width = m_areaBounds.Y * .5f;
-	float height = m_areaBounds.X * .5f;
 	for (const auto& vehiclePosition : vehiclePositions)
 	{
-		// bottom left
-		FVector areaOrigin = m_origin - FVector(width, height, 0.f);
-		if (Internal::IsPointWithinArea(vehiclePosition, areaOrigin, width, height))
+		// Shorten the vertical range of searched positions based on vehicle positions
+		TPair<uint16_t, uint16_t> verticalIndices = { 0, m_wheatPositions.Num() - 1 };
+		uint16_t verticalIndicesRange = verticalIndices.Value - verticalIndices.Key;
+		while (verticalIndicesRange > Internal::wheatPositionSortingRadius)
 		{
-			UpdateWheatPositionsToSprout(vehiclePosition, m_wheatPositions_bottomLeft);
-			continue;
-		}
+			uint16_t middleVerticalIndex = (verticalIndices.Value + verticalIndices.Key) / 2;
+			auto heightValue = m_wheatPositions[middleVerticalIndex][0].X;
+			if (FMath::IsNearlyEqual(vehiclePosition.X, heightValue) || vehiclePosition.X < heightValue)
+			{
+				verticalIndices = { verticalIndices.Key, middleVerticalIndex };
+			}
+			else
+			{
+				verticalIndices = { middleVerticalIndex , verticalIndices.Value };
+			}
 
-		// bottom right
-		areaOrigin = m_origin + FVector(width, -height, 0.f);
-		if (Internal::IsPointWithinArea(vehiclePosition, areaOrigin, width, height))
+			verticalIndicesRange = verticalIndices.Value - verticalIndices.Key;
+		}
+		
+		// Shorten the horizontal range of searched positions based on vehicle positions
+		for (uint16_t verticalIndex = verticalIndices.Key; verticalIndex <= verticalIndices.Value; verticalIndex++)
 		{
-			UpdateWheatPositionsToSprout(vehiclePosition, m_wheatPositions_bottomRight);
-			continue;
-		}
+			TArray<FVector> positionsList = m_wheatPositions[verticalIndex];
+			TPair<uint16_t, uint16_t> horizontalIndices = { 0, positionsList.Num() };
+			uint16_t horizontalIndicesRange = horizontalIndices.Value - horizontalIndices.Key;
+			
+			while (horizontalIndicesRange > Internal::wheatPositionSortingRadius)
+			{
+				uint16_t middleHorizontalIndex = (horizontalIndices.Value + horizontalIndices.Key) / 2;
+				auto widthValue = positionsList[middleHorizontalIndex].Y;
 
-		// top left
-		areaOrigin = m_origin - FVector(width, -height, 0.f);
-		if (Internal::IsPointWithinArea(vehiclePosition, areaOrigin, width, height))
-		{
-			UpdateWheatPositionsToSprout(vehiclePosition, m_wheatPositions_topLeft);
-			continue;
-		}
+				if (FMath::IsNearlyEqual(vehiclePosition.Y, widthValue) || vehiclePosition.Y < widthValue)
+				{
+					horizontalIndices = { horizontalIndices.Key, middleHorizontalIndex };
+				}
+				else
+				{
+					horizontalIndices = { middleHorizontalIndex , horizontalIndices.Value };
+				}
 
-		areaOrigin = m_origin + FVector(width, height, 0.f);
-		if (Internal::IsPointWithinArea(vehiclePosition, areaOrigin, width, height))
-		{
-			UpdateWheatPositionsToSprout(vehiclePosition, m_wheatPositions_topRight);
-			continue;
-		}
+				horizontalIndicesRange = horizontalIndices.Value - horizontalIndices.Key;
+			}
 
-		UE_LOG(LogTemp, Error, TEXT("No position found: %s,"), *vehiclePosition.ToCompactString());
+			// Update positions to sprout
+			positionsList.RemoveAtSwap(horizontalIndices.Value, positionsList.Num() - horizontalIndices.Value);
+			positionsList.RemoveAtSwap(horizontalIndices.Key);
+			UpdateWheatPositionsToSprout(vehiclePosition, positionsList, verticalIndex);
+		}
 	}
 }
 
-void ANFWFarmingAreaTrigger::UpdateWheatPositionsToSprout(const FVector& position, const TArray<FVector>& sproutPositions)
+bool ANFWFarmingAreaTrigger::TryInsertWheatPositionsAroundIndex(uint16_t index, float heightOffset, float widthOffset)
+{
+	if(m_wheatPositions.IsValidIndex(index))
+	{
+		// Move heightIndex lines below origin
+		FVector leftPoint = m_origin + FVector(heightOffset * WheatSpacing, -widthOffset * WheatSpacing, 0.f);
+		FVector rightPoint = m_origin + FVector(heightOffset * WheatSpacing, widthOffset * WheatSpacing, 0.f);
+
+		m_wheatPositions[index].AddUnique(leftPoint);
+		m_wheatPositions[index].AddUnique(rightPoint);
+
+		if (Debug_SpawnWheatOnBeginPlay)
+		{
+			m_wheatPositionsToSprout.AddUnique(leftPoint);
+			m_wheatPositionsToSprout.AddUnique(rightPoint);
+		}
+
+		return true;
+	}
+
+	return false;
+}
+
+void ANFWFarmingAreaTrigger::TrySpreadWheatToSprout(uint16_t verticalIndex, uint16_t horizontalIndex, uint16_t horizontalOffset)
+{
+	if (m_wheatPositions.IsValidIndex(verticalIndex))
+	{
+		uint16_t leftIndex = horizontalIndex - horizontalOffset;
+		if (m_wheatPositions[verticalIndex].IsValidIndex(leftIndex))
+		{
+			m_wheatPositionsToSprout.AddUnique(m_wheatPositions[verticalIndex][leftIndex]);
+		}
+
+		uint16_t rightIndex = horizontalIndex + horizontalOffset;
+		if (m_wheatPositions[verticalIndex].IsValidIndex(rightIndex))
+		{
+			m_wheatPositionsToSprout.AddUnique(m_wheatPositions[verticalIndex][rightIndex]);
+		}
+	}
+}
+
+void ANFWFarmingAreaTrigger::UpdateWheatPositionsToSprout(const FVector& position,
+														  const TArray<FVector>& sproutPositions,
+														  const uint16_t verticalIndex)
 {
 	for (const auto& sproutPosition : sproutPositions)
 	{
-		if (Internal::IsPointWithinArea(position, sproutPosition, s_wheatAreaSideLength, s_wheatAreaSideLength))
+		if (Internal::IsPointWithinArea(position, sproutPosition, WheatSpacing, WheatSpacing))
 		{
-			m_wheatPositionsToSprout.Add(position);
+			m_wheatPositionsToSprout.AddUnique(sproutPosition);
+			uint16_t horizontalIndex = m_wheatPositions[verticalIndex].Find(sproutPosition);
+
+			for (uint16_t verticalOffset = 0; verticalOffset <= WheatSproutRadius; verticalOffset++)
+			{
+				uint16_t topIndex = verticalIndex - verticalOffset;
+				uint16_t bottomIndex = verticalIndex + verticalOffset;
+				for (uint16_t horizontalOffset = 1; horizontalOffset <= WheatSproutRadius; horizontalOffset++)
+				{
+					TrySpreadWheatToSprout(topIndex, horizontalIndex, horizontalOffset);
+					TrySpreadWheatToSprout(bottomIndex, horizontalIndex, horizontalOffset);
+				}
+			}
+
 			break;
 		}
+	}
+}
+
+void ANFWFarmingAreaTrigger::SpawnWheat(AActor* otherActor) const
+{
+	FHitResult hitResult;
+
+	FCollisionQueryParams QueryParams;
+	QueryParams.AddIgnoredActor(otherActor);
+
+	// Left here for debug
+	for (auto position : m_wheatPositionsToSprout)
+	{
+		FVector traceStart = position + FVector(0.f, 0.f, 1000.f);
+		FVector traceEnd = position - FVector(0.f, 0.f, 1000.f);
+
+		FRotator wheatNormal;
+		bool success = GetWorld()->LineTraceSingleByChannel(hitResult, traceStart, traceEnd, ECC_WorldStatic, QueryParams);
+		if (success)
+		{
+			position.Z = hitResult.ImpactPoint.Z;
+			wheatNormal = UKismetMathLibrary::MakeRotFromZ(hitResult.ImpactNormal);
+		}
+
+		GetWorld()->SpawnActor<AActor>(WheatActor, position, wheatNormal);
 	}
 }
