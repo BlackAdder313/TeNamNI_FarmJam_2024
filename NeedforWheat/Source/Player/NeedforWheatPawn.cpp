@@ -12,6 +12,8 @@
 #include "Vehicle/Generic/NeedforWheatWheelFront.h"
 #include "Vehicle/Generic/NeedforWheatWheelRear.h"
 
+#include "NeedforWheatPlayerController.h"
+
 #define LOCTEXT_NAMESPACE "VehiclePawn"
 
 DEFINE_LOG_CATEGORY(LogTemplateVehicle);
@@ -86,6 +88,12 @@ void ANeedforWheatPawn::SetupPlayerInputComponent(class UInputComponent* PlayerI
 
 		// reset the vehicle 
 		EnhancedInputComponent->BindAction(ResetVehicleAction, ETriggerEvent::Triggered, this, &ANeedforWheatPawn::ResetVehicle);
+
+		// reset the vehicle 
+		EnhancedInputComponent->BindAction(TryStartWheatCollectionAction,
+										   ETriggerEvent::Triggered,
+										   this,
+										   &ANeedforWheatPawn::TryStartWheatCollection);
 	}
 	else
 	{
@@ -203,6 +211,14 @@ void ANeedforWheatPawn::ResetVehicle(const FInputActionValue& Value)
 	GetMesh()->SetPhysicsLinearVelocity(FVector::ZeroVector);
 
 	UE_LOG(LogTemplateVehicle, Error, TEXT("Reset Vehicle"));
+}
+
+void ANeedforWheatPawn::TryStartWheatCollection(const FInputActionValue& Value)
+{
+	if (auto playerController = Cast<ANeedforWheatPlayerController>(GetController()))
+	{
+		playerController->TryStartWheatCollection();
+	}
 }
 
 #undef LOCTEXT_NAMESPACE

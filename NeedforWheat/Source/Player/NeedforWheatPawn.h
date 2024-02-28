@@ -75,6 +75,10 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputAction* ResetVehicleAction;
 
+	/** Reset Vehicle Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+	UInputAction* TryStartWheatCollectionAction;
+
 	/** Keeps track of which camera is active */
 	bool bFrontCameraActive = false;
 
@@ -120,6 +124,9 @@ protected:
 
 	/** Handles reset vehicle input */
 	void ResetVehicle(const FInputActionValue& Value);
+
+	/** Notify the start of wheat collection */
+	void TryStartWheatCollection(const FInputActionValue& Value);
 
 	/** Called when the brake lights are turned on or off */
 	UFUNCTION(BlueprintImplementableEvent, Category="Vehicle")

@@ -57,19 +57,6 @@ void ANeedforWheatPlayerController::Tick(float Delta)
 				auto [plantedWheat, totalWheat] = m_gameMode.Get()->GetFarmingAreasWheatInfo();
 				VehicleUI->UpdatePlantedWheat(plantedWheat, totalWheat);
 				timer = 0.f;
-
-				// Temp debug code
-				// Will be replaced with button press
-				if (2 * plantedWheat >= totalWheat)
-				{
-					TArray<AActor*> matchingActors;
-					UGameplayStatics::GetAllActorsOfClass(GetWorld(), ANFWWheat::StaticClass(), matchingActors);
-
-					for (const auto& wheat : matchingActors)
-					{
-						Cast<ANFWWheat>(wheat)->OnWheatCollectionStart();
-					}
-				}
 			}
 		}
 	}
@@ -98,5 +85,24 @@ void ANeedforWheatPlayerController::UnregisterFarmingArea(ANFWFarmingAreaTrigger
 	{
 		m_positionsInFarmingArea.Empty();
 		m_farmingArea.Reset();
+	}
+}
+
+void ANeedforWheatPlayerController::TryStartWheatCollection()
+{
+	if (!m_gameMode.IsValid())
+	{
+		return;
+	}
+
+	if (m_gameMode->TryStartWheatCollection())
+	{
+		TArray<AActor*> matchingActors;
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), ANFWWheat::StaticClass(), matchingActors);
+
+		for (const auto& wheat : matchingActors)
+		{
+			Cast<ANFWWheat>(wheat)->OnWheatCollectionStart();
+		}
 	}
 }

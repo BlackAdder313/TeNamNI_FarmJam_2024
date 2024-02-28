@@ -25,6 +25,8 @@ public:
 	void RegisterFarmingArea(ANFWFarmingAreaTrigger* farmingArea);
 	void UnregisterFarmingArea(ANFWFarmingAreaTrigger* farmingArea);
 
+	void TryStartWheatCollection();
+
 protected:
 	/** Input Mapping Context to be used for player input */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)

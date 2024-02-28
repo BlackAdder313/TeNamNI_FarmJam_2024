@@ -18,6 +18,10 @@ public:
 	ANFWWheat() = default;
 
 	/** Implemented in Blueprint to display the planted wheat */
-	UFUNCTION(BlueprintImplementableEvent, Category = Vehicle)
+	UFUNCTION(BlueprintNativeEvent, Category = Wheat)
 	void OnWheatCollectionStart();
+
+protected:
+	UFUNCTION()
+	void OnCollectByVehicle(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
 };
