@@ -6,6 +6,8 @@
 #include "GameFramework/GameModeBase.h"
 #include "NeedforWheatGameMode.generated.h"
 
+class ANFWFarmingAreaTrigger;
+
 UCLASS(MinimalAPI)
 class ANeedforWheatGameMode : public AGameModeBase
 {
@@ -13,6 +15,14 @@ class ANeedforWheatGameMode : public AGameModeBase
 
 public:
 	ANeedforWheatGameMode();
+
+	virtual void PostInitProperties() override;
+
+	void RegisterFarmingArea(ANFWFarmingAreaTrigger* farmingArea);
+	TPair<int, int> GetFarmingAreasWheatInfo() const;
+
+private:
+	TArray<TWeakObjectPtr<ANFWFarmingAreaTrigger>> m_registeredFarmingAreas;
 };
 
 

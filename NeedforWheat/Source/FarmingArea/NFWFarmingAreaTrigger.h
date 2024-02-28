@@ -22,6 +22,8 @@ public:
 
 	void UpdateVehiclePositions(const TArray<FVector>& vehiclePositions);
 
+	TPair<int, int> GetPlantedWheatInfo() const;
+
 protected:
 	UFUNCTION()
 	void OnPlayerEnterTriggerArea(AActor* OverlappedActor, AActor* OtherActor);
@@ -50,7 +52,7 @@ private:
 	void UpdateWheatPositionsToSprout(const FVector& position, const TArray<FVector>& sproutPositions, const uint16_t verticalIndex);
 	void TrySpreadWheatToSprout(uint16_t verticalIndex, uint16_t horizontalIndex, uint16_t horizontalOffset);
 
-	void SpawnWheat(AActor* otherActor = nullptr) const;
+	void SpawnWheat(FVector position);
 
 	FVector m_origin;
 	FVector m_areaBounds;
@@ -66,4 +68,5 @@ private:
 	TArray<TArray<FVector>> m_wheatPositions;
 
 	TArray<FVector> m_wheatPositionsToSprout;
+	TWeakObjectPtr<AActor> m_actorToIgnore;
 };

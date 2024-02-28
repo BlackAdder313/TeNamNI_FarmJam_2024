@@ -17,3 +17,9 @@ void UNeedforWheatUI::UpdateGear(int32 NewGear)
 	// call the Blueprint handler
 	OnGearUpdate(NewGear);
 }
+
+void UNeedforWheatUI::UpdatePlantedWheat(int32 PlantedWheat, int32 TotalWheat)
+{
+	// call the Blueprint handler
+	OnPlantedWheatAmountUpdate(PlantedWheat, TotalWheat);
+}

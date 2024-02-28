@@ -10,6 +10,7 @@ class UInputMappingContext;
 class ANeedforWheatPawn;
 class UNeedforWheatUI;
 class ANFWFarmingAreaTrigger;
+class ANeedforWheatGameMode;
 
 /**
  *  Vehicle Player Controller class
@@ -50,4 +51,5 @@ protected:
 private:
 	TWeakObjectPtr<ANFWFarmingAreaTrigger> m_farmingArea;
 	TArray<FVector> m_positionsInFarmingArea;
+	TWeakObjectPtr<ANeedforWheatGameMode> m_gameMode;
 };
