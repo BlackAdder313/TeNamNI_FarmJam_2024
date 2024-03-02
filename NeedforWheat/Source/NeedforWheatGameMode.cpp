@@ -5,7 +5,7 @@
 #include "FarmingArea\NFWFarmingAreaTrigger.h"
 #include "Player\NeedforWheatPlayerController.h"
 
-static float s_startWheatCollectionThreshold = 0.3f;
+static float s_startWheatCollectionThreshold = 0.01f;
 
 ANeedforWheatGameMode::ANeedforWheatGameMode()
 {
@@ -18,7 +18,7 @@ void ANeedforWheatGameMode::PostInitProperties()
 	m_registeredFarmingAreas.Empty();
 
 	m_farmingStatus = EFarmingStatus::Plant;
-	m_collectedWheatInfo = { 0 , 0 };
+	m_collectedWheatInfo = { 0 , 1 };
 }
 
 void ANeedforWheatGameMode::RegisterFarmingArea(ANFWFarmingAreaTrigger* farmingArea)
@@ -81,5 +81,5 @@ void ANeedforWheatGameMode::BeginWheatCollection()
 
 void ANeedforWheatGameMode::OnWheatCollected()
 {
-	m_collectedWheatInfo.Value++;
+	m_collectedWheatInfo.Key++;
 }

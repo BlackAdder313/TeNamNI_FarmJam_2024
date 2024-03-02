@@ -17,13 +17,24 @@ class NEEDFORWHEAT_API ANFWWheat : public AActor
 public:
 	ANFWWheat() = default;
 
-	void BeginPlay() override;
+	virtual void PostInitializeComponents() override;
+	virtual void Tick(float DeltaSeconds) override;
 
 	/** Implemented in Blueprint to display the planted wheat */
 	UFUNCTION(BlueprintNativeEvent, Category = Wheat)
 	void OnWheatCollectionStart();
 
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	bool Debug_DisableScaleAnimation = false;
+
 protected:
 	UFUNCTION()
 	void OnCollectByVehicle(AActor* OverlappedActor, AActor* OtherActor);
+
+private:
+	bool m_shouldGrowFullWheat = false;
+	
+	float m_delayTimer = 0.f;
+
+	void GrowSprout(float targetScale, float deltaTime = 0.f);
 };

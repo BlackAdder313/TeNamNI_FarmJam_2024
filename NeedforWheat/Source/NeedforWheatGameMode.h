@@ -31,6 +31,7 @@ public:
 	void OnWheatCollected();
 
 	EFarmingStatus GetFarmingStatus() const { return m_farmingStatus; }
+	const TPair<int, int>& GetCollectedWheatInfo() const { return m_collectedWheatInfo; }
 
 	bool TryStartWheatCollection();
 

@@ -32,33 +32,49 @@ void ANeedforWheatPlayerController::BeginPlay()
 	VehicleUI->AddToViewport();
 
 	m_gameMode = MakeWeakObjectPtr<ANeedforWheatGameMode>(Cast<ANeedforWheatGameMode>(GetWorld()->GetAuthGameMode()));
+	m_levelTimer = LevelTimerInSeconds;
 }
 
 void ANeedforWheatPlayerController::Tick(float Delta)
 {
 	Super::Tick(Delta);
 
-	static float timer = 0.f;
-	timer += Delta;
+	LevelTimerInSeconds -= Delta;
 
 	if (IsValid(VehiclePawn) && IsValid(VehicleUI))
 	{
+		VehicleUI->UpdateLevelTimer(LevelTimerInSeconds);
 		VehicleUI->UpdateSpeed(VehiclePawn->GetChaosVehicleMovement()->GetForwardSpeed());
 		VehicleUI->UpdateGear(VehiclePawn->GetChaosVehicleMovement()->GetCurrentGear());
-		if (m_farmingArea.IsValid() && m_gameMode.IsValid() && m_gameMode.Get()->GetFarmingStatus() == EFarmingStatus::Plant)
-		{
-			m_positionsInFarmingArea.Add(GetPawn()->GetActorLocation());
-
-			if (timer > .75f )
+		if (m_farmingArea.IsValid() && m_gameMode.IsValid())
+		{			
+			
+			auto [collectedWheat, totalWheat] = m_gameMode.Get()->GetCollectedWheatInfo();
+			VehicleUI->UpdateCollectedWheat(collectedWheat, totalWheat);
+			VehicleUI->UpdateLevelScore(collectedWheat * WheatPointsValue);
+			
+			if (m_gameMode.Get()->GetFarmingStatus() == EFarmingStatus::Plant)
 			{
-				m_farmingArea->UpdateVehiclePositions(m_positionsInFarmingArea);
-				m_positionsInFarmingArea.Empty();
+				static float timer = 0.f;
+				timer += Delta;
+				m_positionsInFarmingArea.Add(GetPawn()->GetActorLocation());
 				
-				auto [plantedWheat, totalWheat] = m_gameMode.Get()->GetFarmingAreasWheatInfo();
-				VehicleUI->UpdatePlantedWheat(plantedWheat, totalWheat);
-				timer = 0.f;
+				if (timer > .75f)
+				{
+					m_farmingArea->UpdateVehiclePositions(m_positionsInFarmingArea);
+					m_positionsInFarmingArea.Empty();
+
+					auto [plantedWheat, totalWheatAmount] = m_gameMode.Get()->GetFarmingAreasWheatInfo();
+					VehicleUI->UpdatePlantedWheat(plantedWheat, totalWheatAmount);
+					timer = 0.f;
+				}
 			}
 		}
+	}
+
+	if (LevelTimerInSeconds <= 0.f)
+	{
+		FinishLevel();
 	}
 }
 
@@ -86,6 +102,12 @@ void ANeedforWheatPlayerController::UnregisterFarmingArea(ANFWFarmingAreaTrigger
 		m_positionsInFarmingArea.Empty();
 		m_farmingArea.Reset();
 	}
+}
+
+void ANeedforWheatPlayerController::FinishLevel()
+{
+	SetActorTickEnabled(false);
+	// Send to UI message with level finished
 }
 
 void ANeedforWheatPlayerController::TryStartWheatCollection()

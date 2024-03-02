@@ -3,8 +3,6 @@
 
 #include "NFWFarmingAreaTrigger.h"
 
-#include "Kismet/KismetMathLibrary.h"
-
 #include "NeedforWheatGameMode.h"
 #include "Player\NeedforWheatPawn.h"
 #include "Player\NeedforWheatPlayerController.h"
@@ -28,13 +26,44 @@ void ANFWFarmingAreaTrigger::PostInitializeComponents()
 	OnActorEndOverlap.AddDynamic(this, &ANFWFarmingAreaTrigger::OnPlayerExitTriggerArea);
 }
 
+void ANFWFarmingAreaTrigger::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	
+	DelayedSpawnWheat(DeltaTime);
+}
+
+void ANFWFarmingAreaTrigger::DelayedSpawnWheat(float DeltaTime)
+{
+	for (auto& wheatSpawner : m_wheatSpawners)
+	{
+		if (wheatSpawner.Tick(DeltaTime))
+		{
+			auto [lineIndex, rowIndex] = wheatSpawner.m_spawnPositionIndices;
+			SpawnWheat(m_wheatPositions[lineIndex][rowIndex]);
+			m_wheatSpawnersToClear.Add(wheatSpawner);
+		}
+	}
+
+	for (auto& wheatSpawner : m_wheatSpawnersToClear)
+	{
+		m_wheatSpawners.Remove(wheatSpawner);
+	}
+
+	m_wheatSpawnersToClear.Empty();
+}
+
 void ANFWFarmingAreaTrigger::OnPlayerEnterTriggerArea(AActor* OverlappedActor, AActor* OtherActor)
 {
 	if (const ANeedforWheatPawn* pawnActor = Cast<ANeedforWheatPawn>(OtherActor))
 	{
-		pawnActor->GetController<ANeedforWheatPlayerController>()->RegisterFarmingArea(this);
+		if (ANeedforWheatPlayerController* controller = pawnActor->GetController<ANeedforWheatPlayerController>())
+		{
+			controller->RegisterFarmingArea(this);
+		}
+		
 		UE_LOG(LogTemp, Warning, TEXT("Enter Farming Area"));
-		m_actorToIgnore = MakeWeakObjectPtr<AActor>(OtherActor);
+		m_actorsToIgnore.AddUnique(MakeWeakObjectPtr<AActor>(OtherActor));
 	}
 }
 
@@ -42,17 +71,13 @@ void ANFWFarmingAreaTrigger::OnPlayerExitTriggerArea(AActor* OverlappedActor, AA
 {
 	if (const ANeedforWheatPawn* pawnActor = Cast<ANeedforWheatPawn>(OtherActor))
 	{
-		if (const ANeedforWheatPlayerController* playerController = pawnActor->GetController<ANeedforWheatPlayerController>())
+		if (ANeedforWheatPlayerController* playerController = pawnActor->GetController<ANeedforWheatPlayerController>())
 		{
-			pawnActor->GetController<ANeedforWheatPlayerController>()->UnregisterFarmingArea(this);
-			m_actorToIgnore.Reset();
+			playerController->UnregisterFarmingArea(this);
 
 			if (Debug_SpawnWheatOnExitFromFarmingArea)
 			{
-				for (auto position : m_wheatPositionsToSprout)
-				{
-					SpawnWheat(position);
-				}
+				DelayedSpawnWheat(100.f);
 			}
 
 			UE_LOG(LogTemp, Warning, TEXT("Exit Farming Area"));
@@ -63,6 +88,8 @@ void ANFWFarmingAreaTrigger::OnPlayerExitTriggerArea(AActor* OverlappedActor, AA
 void ANFWFarmingAreaTrigger::BeginPlay()
 {
 	Super::BeginPlay();
+
+	SetActorTickEnabled(true);
 
 	GetActorBounds(true, m_origin, m_areaBounds);
 
@@ -98,10 +125,7 @@ void ANFWFarmingAreaTrigger::BeginPlay()
 
 	if (Debug_SpawnWheatOnBeginPlay)
 	{
-		for (auto position : m_wheatPositionsToSprout)
-		{
-			SpawnWheat(position);
-		}
+		DelayedSpawnWheat(100.f);
 	}
 
 	if (ANeedforWheatGameMode* gameMode = Cast<ANeedforWheatGameMode>(GetWorld()->GetAuthGameMode()))
@@ -173,13 +197,13 @@ bool ANFWFarmingAreaTrigger::TryInsertWheatPositionsAroundIndex(uint16_t index, 
 		FVector leftPoint = m_origin + FVector(heightOffset * WheatSpacing, -widthOffset * WheatSpacing, 0.f);
 		FVector rightPoint = m_origin + FVector(heightOffset * WheatSpacing, widthOffset * WheatSpacing, 0.f);
 
-		m_wheatPositions[index].AddUnique(leftPoint);
-		m_wheatPositions[index].AddUnique(rightPoint);
+		size_t leftIndex = m_wheatPositions[index].AddUnique(leftPoint);
+		size_t rightIndex = m_wheatPositions[index].AddUnique(rightPoint);
 
 		if (Debug_SpawnWheatOnBeginPlay)
 		{
-			m_wheatPositionsToSprout.AddUnique(leftPoint);
-			m_wheatPositionsToSprout.AddUnique(rightPoint);
+			RegisterWheatToSpawn({ index, leftIndex });
+			RegisterWheatToSpawn({ index, rightIndex });
 		}
 
 		return true;
@@ -195,13 +219,13 @@ void ANFWFarmingAreaTrigger::TrySpreadWheatToSprout(uint16_t verticalIndex, uint
 		uint16_t leftIndex = horizontalIndex - horizontalOffset;
 		if (m_wheatPositions[verticalIndex].IsValidIndex(leftIndex))
 		{
-			SpawnWheat(m_wheatPositions[verticalIndex][leftIndex]);
+			RegisterWheatToSpawn({ verticalIndex, leftIndex });
 		}
 
 		uint16_t rightIndex = horizontalIndex + horizontalOffset;
 		if (m_wheatPositions[verticalIndex].IsValidIndex(rightIndex))
 		{
-			SpawnWheat(m_wheatPositions[verticalIndex][rightIndex]);
+			RegisterWheatToSpawn({ verticalIndex, rightIndex });
 		}
 	}
 }
@@ -214,8 +238,8 @@ void ANFWFarmingAreaTrigger::UpdateWheatPositionsToSprout(const FVector& positio
 	{
 		if (Internal::IsPointWithinArea(position, sproutPosition, WheatSpacing, WheatSpacing))
 		{
-			SpawnWheat(sproutPosition);
 			uint16_t horizontalIndex = m_wheatPositions[verticalIndex].Find(sproutPosition);
+			RegisterWheatToSpawn({ verticalIndex, horizontalIndex });
 
 			for (uint16_t verticalOffset = 0; verticalOffset <= WheatSproutRadius; verticalOffset++)
 			{
@@ -233,21 +257,30 @@ void ANFWFarmingAreaTrigger::UpdateWheatPositionsToSprout(const FVector& positio
 	}
 }
 
-void ANFWFarmingAreaTrigger::SpawnWheat(FVector position)
+void ANFWFarmingAreaTrigger::RegisterWheatToSpawn(const TPair<int, int>& spawnPositionIndices)
 {
-	size_t newIndex = m_wheatPositionsToSprout.AddUnique(position);
-	if (newIndex <  m_wheatPositionsToSprout.Num() - 1)
+	size_t oldSize = m_wheatPositionsToSprout.Num();
+	m_wheatPositionsToSprout.AddUnique(spawnPositionIndices);
+	if (m_wheatPositionsToSprout.Num() == oldSize)
 	{
 		// This wheat position has been already spawned
 		return;
 	}
+	
+	m_wheatSpawners.Add({ static_cast<float>(UKismetMathLibrary::RandomFloatInRange(0.1, 1.4)), spawnPositionIndices });
+}
 
+void ANFWFarmingAreaTrigger::SpawnWheat(FVector position)
+{
 	FHitResult hitResult;
 
 	FCollisionQueryParams QueryParams;
-	if (m_actorToIgnore.IsValid())
+	for (const auto& actorToIgnore : m_actorsToIgnore)
 	{
-		QueryParams.AddIgnoredActor(m_actorToIgnore.Get());
+		if (actorToIgnore.IsValid())
+		{
+			QueryParams.AddIgnoredActor(actorToIgnore.Get());
+		}
 	}
 
 	FVector traceStart = position + FVector(0.f, 0.f, 1000.f);
@@ -262,11 +295,10 @@ void ANFWFarmingAreaTrigger::SpawnWheat(FVector position)
 	}
 
 	GetWorld()->SpawnActor<AActor>(WheatActor, position, wheatNormal);
-	
 }
 
 TPair<int, int> ANFWFarmingAreaTrigger::GetPlantedWheatInfo() const
 {
-	static const int totalWheatNumber = m_verticalWheatHalfAmount * m_horizontalWheatHalfAmount * 4;
-	return TPair<int, int>(m_wheatPositionsToSprout.Num(), totalWheatNumber);
+	const int totalWheatNum = m_wheatPositions.Num() * m_wheatPositions[0].Num();
+	return TPair<int, int>(m_wheatPositionsToSprout.Num(), totalWheatNum);
 }

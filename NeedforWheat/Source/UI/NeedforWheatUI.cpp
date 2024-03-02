@@ -23,3 +23,21 @@ void UNeedforWheatUI::UpdatePlantedWheat(int32 PlantedWheat, int32 TotalWheat)
 	// call the Blueprint handler
 	OnPlantedWheatAmountUpdate(PlantedWheat, TotalWheat);
 }
+
+void UNeedforWheatUI::UpdateCollectedWheat(int32 CollectedWheat, int32 TotalWheat)
+{
+	// call the Blueprint handler
+	OnCollectedWheatAmountUpdate(CollectedWheat, TotalWheat);
+}
+
+void UNeedforWheatUI::UpdateLevelTimer(float LevelTimer)
+{
+	// call the Blueprint handler
+	int32 fixedLevelTimer = FMath::Max(0, static_cast<int>(LevelTimer));
+	OnLevelTimerUpdate(fixedLevelTimer);
+}
+
+void UNeedforWheatUI::UpdateLevelScore(int32 score)
+{
+	OnLevelScoreUpdate(score);
+}

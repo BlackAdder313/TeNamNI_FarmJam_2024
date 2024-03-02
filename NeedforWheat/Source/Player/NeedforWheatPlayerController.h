@@ -26,6 +26,7 @@ public:
 	void UnregisterFarmingArea(ANFWFarmingAreaTrigger* farmingArea);
 
 	void TryStartWheatCollection();
+	void FinishLevel();
 
 protected:
 	/** Input Mapping Context to be used for player input */
@@ -48,6 +49,12 @@ protected:
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	TSubclassOf<ANeedforWheatPawn> PlantingVehicle;
 
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	float LevelTimerInSeconds = 600;
+
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	int WheatPointsValue = 10;
+
 protected:
 	// Actor interface overrides
 	virtual void BeginPlay() override;
@@ -60,4 +67,6 @@ private:
 	TWeakObjectPtr<ANFWFarmingAreaTrigger> m_farmingArea;
 	TArray<FVector> m_positionsInFarmingArea;
 	TWeakObjectPtr<ANeedforWheatGameMode> m_gameMode;
+
+	float m_levelTimer = 0;
 };
