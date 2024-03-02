@@ -70,7 +70,7 @@ ANeedforWheatOffroadCar::ANeedforWheatOffroadCar()
 	GetChaosVehicleMovement()->EngineSetup.MaxTorque = 600.0f;
 	GetChaosVehicleMovement()->EngineSetup.MaxRPM = 5000.0f;
 	GetChaosVehicleMovement()->EngineSetup.EngineIdleRPM = 1200.0f;
-	GetChaosVehicleMovement()->EngineSetup.EngineBrakeEffect = 0.5f;
+	GetChaosVehicleMovement()->EngineSetup.EngineBrakeEffect = 3f;
 	GetChaosVehicleMovement()->EngineSetup.EngineRevUpMOI = 5.0f;
 	GetChaosVehicleMovement()->EngineSetup.EngineRevDownRate = 600.0f;
 
