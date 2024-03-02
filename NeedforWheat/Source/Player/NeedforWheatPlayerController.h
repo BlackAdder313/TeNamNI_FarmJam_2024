@@ -42,6 +42,12 @@ protected:
 	/** Pointer to the UI widget */
 	TObjectPtr<UNeedforWheatUI> VehicleUI;
 
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	TSubclassOf<ANeedforWheatPawn> HarvestingVehicle;
+
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	TSubclassOf<ANeedforWheatPawn> PlantingVehicle;
+
 protected:
 	// Actor interface overrides
 	virtual void BeginPlay() override;

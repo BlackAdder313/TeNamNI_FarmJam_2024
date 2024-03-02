@@ -45,11 +45,11 @@ void ANeedforWheatPlayerController::Tick(float Delta)
 	{
 		VehicleUI->UpdateSpeed(VehiclePawn->GetChaosVehicleMovement()->GetForwardSpeed());
 		VehicleUI->UpdateGear(VehiclePawn->GetChaosVehicleMovement()->GetCurrentGear());
-		if (m_farmingArea.IsValid())
+		if (m_farmingArea.IsValid() && m_gameMode.IsValid() && m_gameMode.Get()->GetFarmingStatus() == EFarmingStatus::Plant)
 		{
 			m_positionsInFarmingArea.Add(GetPawn()->GetActorLocation());
 
-			if (timer > .75f && m_gameMode.IsValid())
+			if (timer > .75f )
 			{
 				m_farmingArea->UpdateVehiclePositions(m_positionsInFarmingArea);
 				m_positionsInFarmingArea.Empty();
@@ -97,12 +97,48 @@ void ANeedforWheatPlayerController::TryStartWheatCollection()
 
 	if (m_gameMode->TryStartWheatCollection())
 	{
-		TArray<AActor*> matchingActors;
-		UGameplayStatics::GetAllActorsOfClass(GetWorld(), ANFWWheat::StaticClass(), matchingActors);
-
-		for (const auto& wheat : matchingActors)
+		if (m_gameMode->GetFarmingStatus() == EFarmingStatus::Collect)
 		{
-			Cast<ANFWWheat>(wheat)->OnWheatCollectionStart();
+			TArray<AActor*> matchingActors;
+			UGameplayStatics::GetAllActorsOfClass(GetWorld(), ANFWWheat::StaticClass(), matchingActors);
+
+			for (const auto& wheat : matchingActors)
+			{
+				Cast<ANFWWheat>(wheat)->OnWheatCollectionStart();
+			}
+
+			TArray<AActor*> vehicles;
+			UGameplayStatics::GetAllActorsOfClass(GetWorld(), HarvestingVehicle, vehicles);
+
+			if (vehicles.IsEmpty())
+			{
+				return;
+			}
+
+			if (ANeedforWheatPawn* harvestingVehicle = Cast<ANeedforWheatPawn>(vehicles[0]))
+			{
+				Possess(harvestingVehicle);
+			}
+
+			for (const auto& wheat : matchingActors)
+			{
+				Cast<ANFWWheat>(wheat)->OnWheatCollectionStart();
+			}
+
+			return;
+		}
+
+		TArray<AActor*> vehicles;
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), PlantingVehicle, vehicles);
+
+		if (vehicles.IsEmpty())
+		{
+			return;
+		}
+
+		if (ANeedforWheatPawn* harvestingVehicle = Cast<ANeedforWheatPawn>(vehicles[0]))
+		{
+			Possess(harvestingVehicle);
 		}
 	}
 }

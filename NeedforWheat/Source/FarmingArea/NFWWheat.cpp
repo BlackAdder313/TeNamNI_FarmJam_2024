@@ -3,35 +3,34 @@
 
 #include "NFWWheat.h"
 
+#include "Kismet/KismetMathLibrary.h"
+
 #include "NeedforWheatGameMode.h"
+#include "Player\NeedforWheatPawn.h"
+
+void ANFWWheat::BeginPlay()
+{
+	Super::BeginPlay();
+	SetActorEnableCollision(false);
+}
 
 void ANFWWheat::OnWheatCollectionStart_Implementation()
 {
-	OnActorHit.AddUniqueDynamic(this, &ANFWWheat::OnCollectByVehicle);
-
-	TArray<UStaticMeshComponent*> wheatParts;
-	GetComponents(wheatParts);
-
-	for (auto wheatPart : wheatParts)
-	{
-		wheatPart->SetCollisionProfileName(UCollisionProfile::BlockAllDynamic_ProfileName);
-	}
+	SetActorEnableCollision(true);
+	OnActorBeginOverlap.AddDynamic(this, &ANFWWheat::OnCollectByVehicle);
 }
 
-void ANFWWheat::OnCollectByVehicle(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
+void ANFWWheat::OnCollectByVehicle(AActor* OverlappedActor, AActor* OtherActor)
 {
-	if (auto gameMode = Cast<ANeedforWheatGameMode>(GetWorld()->GetAuthGameMode()))
+	if (const ANeedforWheatPawn* pawnActor = Cast<ANeedforWheatPawn>(OtherActor))
 	{
-		gameMode->OnWheatCollected();
+		if (auto gameMode = Cast<ANeedforWheatGameMode>(GetWorld()->GetAuthGameMode()))
+		{
+			gameMode->OnWheatCollected();
+		}
+
+		SetActorEnableCollision(false);
+
+		SetLifeSpan(UKismetMathLibrary::RandomFloatInRange(0.2, 0.6));
 	}
-
-	TArray<UStaticMeshComponent*> wheatParts;
-	GetComponents(wheatParts);
-
-	for (auto wheatPart : wheatParts)
-	{
-		wheatPart->SetCollisionProfileName(UCollisionProfile::NoCollision_ProfileName);
-	}
-
-	Destroy();
 }

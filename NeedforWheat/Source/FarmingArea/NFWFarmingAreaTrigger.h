@@ -46,6 +46,9 @@ protected:
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	int WheatSproutRadius = 3;
 
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	int MaxNumberOfWheat = -1;
+
 private:
 	bool TryInsertWheatPositionsAroundIndex(uint16_t index, float heightOffset, float widthOffset);
 

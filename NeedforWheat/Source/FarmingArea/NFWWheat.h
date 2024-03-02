@@ -17,11 +17,13 @@ class NEEDFORWHEAT_API ANFWWheat : public AActor
 public:
 	ANFWWheat() = default;
 
+	void BeginPlay() override;
+
 	/** Implemented in Blueprint to display the planted wheat */
 	UFUNCTION(BlueprintNativeEvent, Category = Wheat)
 	void OnWheatCollectionStart();
 
 protected:
 	UFUNCTION()
-	void OnCollectByVehicle(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
+	void OnCollectByVehicle(AActor* OverlappedActor, AActor* OtherActor);
 };

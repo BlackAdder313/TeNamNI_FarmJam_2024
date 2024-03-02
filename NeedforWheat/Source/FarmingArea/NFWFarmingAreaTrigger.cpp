@@ -42,18 +42,21 @@ void ANFWFarmingAreaTrigger::OnPlayerExitTriggerArea(AActor* OverlappedActor, AA
 {
 	if (const ANeedforWheatPawn* pawnActor = Cast<ANeedforWheatPawn>(OtherActor))
 	{
-		pawnActor->GetController<ANeedforWheatPlayerController>()->UnregisterFarmingArea(this);
-		m_actorToIgnore.Reset();
-		
-		if (Debug_SpawnWheatOnExitFromFarmingArea)
+		if (const ANeedforWheatPlayerController* playerController = pawnActor->GetController<ANeedforWheatPlayerController>())
 		{
-			for (auto position : m_wheatPositionsToSprout)
+			pawnActor->GetController<ANeedforWheatPlayerController>()->UnregisterFarmingArea(this);
+			m_actorToIgnore.Reset();
+
+			if (Debug_SpawnWheatOnExitFromFarmingArea)
 			{
-				SpawnWheat(position);
+				for (auto position : m_wheatPositionsToSprout)
+				{
+					SpawnWheat(position);
+				}
 			}
+
+			UE_LOG(LogTemp, Warning, TEXT("Exit Farming Area"));
 		}
-		
-		UE_LOG(LogTemp, Warning, TEXT("Exit Farming Area"));
 	}
 }
 
@@ -66,8 +69,8 @@ void ANFWFarmingAreaTrigger::BeginPlay()
 	float halfHeight = m_areaBounds.X;
 	float halfWidth = m_areaBounds.Y;
 
-	m_verticalWheatHalfAmount = halfHeight / WheatSpacing;
-	m_horizontalWheatHalfAmount = halfWidth / WheatSpacing;
+	m_verticalWheatHalfAmount = MaxNumberOfWheat > 0 ? MaxNumberOfWheat / 4 : halfHeight / WheatSpacing;
+	m_horizontalWheatHalfAmount = MaxNumberOfWheat > 0 ? MaxNumberOfWheat / 4 : halfWidth / WheatSpacing;
 
 	m_wheatPositions.Init(TArray<FVector>(), m_verticalWheatHalfAmount * 2);
 

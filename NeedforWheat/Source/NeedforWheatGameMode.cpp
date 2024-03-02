@@ -48,7 +48,8 @@ bool ANeedforWheatGameMode::TryStartWheatCollection()
 {
 	if (m_farmingStatus == EFarmingStatus::Collect)
 	{
-		return false;
+		m_farmingStatus = EFarmingStatus::Plant;
+		return true;
 	}
 
 	auto [plantedWheat, totalWheat] = GetFarmingAreasWheatInfo();
