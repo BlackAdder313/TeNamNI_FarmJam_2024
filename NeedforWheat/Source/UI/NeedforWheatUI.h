@@ -43,6 +43,8 @@ public:
 
 	void SetWheatCollectionEnabled(bool isWheatCollectionEnabled);
 
+	void NotifyVehicleChange(bool changeStarted);
+
 protected:
 
 	/** Implemented in Blueprint to display the new speed */
@@ -74,4 +76,7 @@ protected:
 
 	UFUNCTION(BlueprintImplementableEvent, Category = Vehicle)
 	void OnSetWheatCollectionEnabled(bool isWheatCollectionEnabled);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = Vehicle)
+	void OnNotifyVehicleChange(bool changeStarted);
 };

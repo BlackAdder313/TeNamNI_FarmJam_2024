@@ -51,3 +51,8 @@ void UNeedforWheatUI::SetWheatCollectionEnabled(bool isWheatCollectionEnabled)
 {
 	OnSetWheatCollectionEnabled(isWheatCollectionEnabled);
 }
+
+void UNeedforWheatUI::NotifyVehicleChange(bool changeStarted)
+{
+	OnNotifyVehicleChange(changeStarted);
+}

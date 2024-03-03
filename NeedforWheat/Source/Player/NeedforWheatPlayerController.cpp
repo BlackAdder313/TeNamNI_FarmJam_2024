@@ -100,6 +100,11 @@ void ANeedforWheatPlayerController::OnPossess(APawn* InPawn)
 
 	// get a pointer to the controlled pawn
 	VehiclePawn = CastChecked<ANeedforWheatPawn>(InPawn);
+
+	if (IsValid(VehicleUI))
+	{
+		VehicleUI->NotifyVehicleChange(false);
+	}
 }
 
 
@@ -156,6 +161,7 @@ void ANeedforWheatPlayerController::TryStartWheatCollection()
 
 			if (ANeedforWheatPawn* harvestingVehicle = Cast<ANeedforWheatPawn>(vehicles[0]))
 			{
+				VehicleUI->NotifyVehicleChange(true);
 				Possess(harvestingVehicle);
 			}
 
@@ -178,6 +184,7 @@ void ANeedforWheatPlayerController::TryStartWheatCollection()
 
 		if (ANeedforWheatPawn* harvestingVehicle = Cast<ANeedforWheatPawn>(vehicles[0]))
 		{
+			VehicleUI->NotifyVehicleChange(true);
 			Possess(harvestingVehicle);
 		}
 
