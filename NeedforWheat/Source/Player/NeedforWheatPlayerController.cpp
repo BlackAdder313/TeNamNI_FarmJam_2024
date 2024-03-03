@@ -54,7 +54,20 @@ void ANeedforWheatPlayerController::Tick(float Delta)
 		{			
 			auto [collectedWheat, totalWheat] = m_gameMode.Get()->GetCollectedWheatInfo();
 			VehicleUI->UpdateCollectedWheat(collectedWheat, totalWheat);
-			VehicleUI->UpdateLevelScore(collectedWheat * WheatPointsValue);
+
+			int32 score = collectedWheat * WheatPointsValue;
+			VehicleUI->UpdateLevelScore(score);
+
+			if (m_gameMode.Get()->CanStartWheatCollection())
+			{
+				VehicleUI->CanStartWheatCollection();
+			}
+
+			if (collectedWheat == totalWheat)
+			{
+				FinishLevel(score);
+				return;
+			}
 			
 			if (m_gameMode.Get()->GetFarmingStatus() == EFarmingStatus::Plant)
 			{
@@ -72,12 +85,12 @@ void ANeedforWheatPlayerController::Tick(float Delta)
 					timer = 0.f;
 				}
 			}
-		}
-	}
 
-	if (LevelTimerInSeconds <= 0.f)
-	{
-		FinishLevel();
+			if (LevelTimerInSeconds <= 0.f)
+			{
+				FinishLevel(score);
+			}
+		}
 	}
 }
 
@@ -107,10 +120,10 @@ void ANeedforWheatPlayerController::UnregisterFarmingArea(ANFWFarmingAreaTrigger
 	}
 }
 
-void ANeedforWheatPlayerController::FinishLevel()
+void ANeedforWheatPlayerController::FinishLevel(int32 score)
 {
 	SetActorTickEnabled(false);
-	// Send to UI message with level finished
+	VehicleUI->FinishLevel(score, 23 /* high score*/);
 }
 
 void ANeedforWheatPlayerController::TryStartWheatCollection()
@@ -151,6 +164,7 @@ void ANeedforWheatPlayerController::TryStartWheatCollection()
 				Cast<ANFWWheat>(wheat)->OnWheatCollectionStart();
 			}
 
+			VehicleUI->SetWheatCollectionEnabled(true);
 			return;
 		}
 
@@ -166,5 +180,7 @@ void ANeedforWheatPlayerController::TryStartWheatCollection()
 		{
 			Possess(harvestingVehicle);
 		}
+
+		VehicleUI->SetWheatCollectionEnabled(false);
 	}
 }

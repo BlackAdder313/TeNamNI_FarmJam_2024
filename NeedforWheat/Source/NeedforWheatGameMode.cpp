@@ -54,12 +54,24 @@ bool ANeedforWheatGameMode::TryStartWheatCollection()
 
 	auto [plantedWheat, totalWheat] = GetFarmingAreasWheatInfo();
 
+	if (CanStartWheatCollection())
+	{
+		BeginWheatCollection();
+		return true;
+	}
+	
+	return false;
+}
+
+bool ANeedforWheatGameMode::CanStartWheatCollection() const
+{
+	auto [plantedWheat, totalWheat] = GetFarmingAreasWheatInfo();
+
 	if (static_cast<float>(plantedWheat) / static_cast<float>(totalWheat) < s_startWheatCollectionThreshold)
 	{
 		return false;
 	}
 
-	BeginWheatCollection();
 	return true;
 }
 

@@ -26,7 +26,7 @@ public:
 	void UnregisterFarmingArea(ANFWFarmingAreaTrigger* farmingArea);
 
 	void TryStartWheatCollection();
-	void FinishLevel();
+	void FinishLevel(int32 score);
 
 protected:
 	/** Input Mapping Context to be used for player input */

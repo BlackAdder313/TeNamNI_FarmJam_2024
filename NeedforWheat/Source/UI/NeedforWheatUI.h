@@ -35,9 +35,15 @@ public:
 
 	/** Called to update the planted wheat display */
 	void UpdateCollectedWheat(int32 PlantedWheat, int32 TotalWheat);
+	
+	void CanStartWheatCollection();
 
 	void UpdateLevelTimer(float LevelTimer);
 	void UpdateLevelScore(int32 score);
+
+	void SetWheatCollectionEnabled(bool isWheatCollectionEnabled);
+
+	void FinishLevel(int32 score, int32 highScore);
 
 protected:
 
@@ -64,4 +70,14 @@ protected:
 	/** Implemented in Blueprint to display the planted wheat */
 	UFUNCTION(BlueprintImplementableEvent, Category = Vehicle)
 	void OnLevelScoreUpdate(int32 score);
+
+	/** Implemented in Blueprint to display the planted wheat */
+	UFUNCTION(BlueprintImplementableEvent, Category = Vehicle)
+	void OnLevelFinished(int32 score, int32 highScore);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = Vehicle)
+	void OnCanStartWheatCollection();
+
+	UFUNCTION(BlueprintImplementableEvent, Category = Vehicle)
+	void OnSetWheatCollectionEnabled(bool isWheatCollectionEnabled);
 };

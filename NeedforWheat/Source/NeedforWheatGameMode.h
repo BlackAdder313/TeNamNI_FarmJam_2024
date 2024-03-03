@@ -34,6 +34,7 @@ public:
 	const TPair<int, int>& GetCollectedWheatInfo() const { return m_collectedWheatInfo; }
 
 	bool TryStartWheatCollection();
+	bool CanStartWheatCollection() const;
 
 private:
 	TArray<TWeakObjectPtr<ANFWFarmingAreaTrigger>> m_registeredFarmingAreas;
