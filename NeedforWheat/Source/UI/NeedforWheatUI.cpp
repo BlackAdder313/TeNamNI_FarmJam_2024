@@ -42,11 +42,6 @@ void UNeedforWheatUI::UpdateLevelScore(int32 score)
 	OnLevelScoreUpdate(score);
 }
 
-void UNeedforWheatUI::FinishLevel(int32 score, int32 highScore)
-{
-	OnLevelFinished(score, highScore);
-}
-
 void UNeedforWheatUI::CanStartWheatCollection()
 {
 	OnCanStartWheatCollection();

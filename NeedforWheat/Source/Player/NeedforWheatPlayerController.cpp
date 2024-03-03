@@ -123,7 +123,7 @@ void ANeedforWheatPlayerController::UnregisterFarmingArea(ANFWFarmingAreaTrigger
 void ANeedforWheatPlayerController::FinishLevel(int32 score)
 {
 	SetActorTickEnabled(false);
-	VehicleUI->FinishLevel(score, 23 /* high score*/);
+	OnLevelFinished(score, 23 /* high score*/);
 }
 
 void ANeedforWheatPlayerController::TryStartWheatCollection()

@@ -63,6 +63,10 @@ protected:
 	// PlayerController interface overrides
 	virtual void OnPossess(APawn* InPawn) override;
 
+	/** Implemented in Blueprint to display the planted wheat */
+	UFUNCTION(BlueprintImplementableEvent, Category = Vehicle)
+	void OnLevelFinished(int32 score, int32 HighScore);
+
 private:
 	TWeakObjectPtr<ANFWFarmingAreaTrigger> m_farmingArea;
 	TArray<FVector> m_positionsInFarmingArea;

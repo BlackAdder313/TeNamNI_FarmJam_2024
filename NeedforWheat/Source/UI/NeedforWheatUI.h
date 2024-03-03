@@ -43,8 +43,6 @@ public:
 
 	void SetWheatCollectionEnabled(bool isWheatCollectionEnabled);
 
-	void FinishLevel(int32 score, int32 highScore);
-
 protected:
 
 	/** Implemented in Blueprint to display the new speed */
@@ -70,10 +68,6 @@ protected:
 	/** Implemented in Blueprint to display the planted wheat */
 	UFUNCTION(BlueprintImplementableEvent, Category = Vehicle)
 	void OnLevelScoreUpdate(int32 score);
-
-	/** Implemented in Blueprint to display the planted wheat */
-	UFUNCTION(BlueprintImplementableEvent, Category = Vehicle)
-	void OnLevelFinished(int32 score, int32 highScore);
 
 	UFUNCTION(BlueprintImplementableEvent, Category = Vehicle)
 	void OnCanStartWheatCollection();
