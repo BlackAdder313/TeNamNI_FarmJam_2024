@@ -5,7 +5,7 @@
 #include "FarmingArea\NFWFarmingAreaTrigger.h"
 #include "Player\NeedforWheatPlayerController.h"
 
-static float s_startWheatCollectionThreshold = 0.01f;
+static float s_startWheatCollectionThreshold = 0.5f;
 
 ANeedforWheatGameMode::ANeedforWheatGameMode()
 {

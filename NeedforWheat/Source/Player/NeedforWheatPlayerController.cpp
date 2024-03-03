@@ -33,13 +33,17 @@ void ANeedforWheatPlayerController::BeginPlay()
 
 	m_gameMode = MakeWeakObjectPtr<ANeedforWheatGameMode>(Cast<ANeedforWheatGameMode>(GetWorld()->GetAuthGameMode()));
 	m_levelTimer = LevelTimerInSeconds;
+	m_wheatCollectionStarted = false;
 }
 
 void ANeedforWheatPlayerController::Tick(float Delta)
 {
 	Super::Tick(Delta);
 
-	LevelTimerInSeconds -= Delta;
+	if (m_wheatCollectionStarted)
+	{
+		LevelTimerInSeconds -= Delta;
+	}
 
 	if (IsValid(VehiclePawn) && IsValid(VehicleUI))
 	{
@@ -48,7 +52,6 @@ void ANeedforWheatPlayerController::Tick(float Delta)
 		VehicleUI->UpdateGear(VehiclePawn->GetChaosVehicleMovement()->GetCurrentGear());
 		if (m_farmingArea.IsValid() && m_gameMode.IsValid())
 		{			
-			
 			auto [collectedWheat, totalWheat] = m_gameMode.Get()->GetCollectedWheatInfo();
 			VehicleUI->UpdateCollectedWheat(collectedWheat, totalWheat);
 			VehicleUI->UpdateLevelScore(collectedWheat * WheatPointsValue);
@@ -119,6 +122,7 @@ void ANeedforWheatPlayerController::TryStartWheatCollection()
 
 	if (m_gameMode->TryStartWheatCollection())
 	{
+		m_wheatCollectionStarted = true;
 		if (m_gameMode->GetFarmingStatus() == EFarmingStatus::Collect)
 		{
 			TArray<AActor*> matchingActors;

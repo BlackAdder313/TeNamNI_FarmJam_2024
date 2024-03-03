@@ -69,4 +69,5 @@ private:
 	TWeakObjectPtr<ANeedforWheatGameMode> m_gameMode;
 
 	float m_levelTimer = 0;
+	bool m_wheatCollectionStarted = false;
 };
